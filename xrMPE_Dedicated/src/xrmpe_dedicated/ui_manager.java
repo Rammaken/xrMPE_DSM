@@ -41,10 +41,10 @@ public class ui_manager extends javax.swing.JFrame {
         txt_sv_mode = new javax.swing.JTextField();
         lbl_sv_password = new javax.swing.JLabel();
         txt_sv_password = new javax.swing.JTextField();
-        lbl_sv_name1 = new javax.swing.JLabel();
-        txt_sv_name1 = new javax.swing.JTextField();
-        lbl_sv_name2 = new javax.swing.JLabel();
-        txt_sv_name2 = new javax.swing.JTextField();
+        lbl_sv_portsv = new javax.swing.JLabel();
+        txt_sv_portsv = new javax.swing.JTextField();
+        lbl_sv_portcl = new javax.swing.JLabel();
+        txt_sv_portcl = new javax.swing.JTextField();
         pnl_advanced = new javax.swing.JPanel();
         lbl_sv_bin = new javax.swing.JLabel();
         txt_sv_bin = new javax.swing.JTextField();
@@ -93,15 +93,15 @@ public class ui_manager extends javax.swing.JFrame {
 
         txt_sv_password.setToolTipText("Set your dedicated server map.");
 
-        lbl_sv_name1.setText("Port server:");
+        lbl_sv_portsv.setText("Port server:");
 
-        txt_sv_name1.setText("5445");
-        txt_sv_name1.setToolTipText("Set the name of your dedicated server.");
+        txt_sv_portsv.setText("5445");
+        txt_sv_portsv.setToolTipText("Set the name of your dedicated server.");
 
-        lbl_sv_name2.setText("Port client:");
+        lbl_sv_portcl.setText("Port client:");
 
-        txt_sv_name2.setText("5447");
-        txt_sv_name2.setToolTipText("Set the name of your dedicated server.");
+        txt_sv_portcl.setText("5447");
+        txt_sv_portcl.setToolTipText("Set the name of your dedicated server.");
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
@@ -133,12 +133,12 @@ public class ui_manager extends javax.swing.JFrame {
                                     .addComponent(lbl_sv_players)))))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_sv_name1)
-                            .addComponent(lbl_sv_name1))
+                            .addComponent(txt_sv_portsv)
+                            .addComponent(lbl_sv_portsv))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_sv_name2)
-                            .addComponent(lbl_sv_name2))))
+                            .addComponent(txt_sv_portcl)
+                            .addComponent(lbl_sv_portcl))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         pnl_mainLayout.setVerticalGroup(
@@ -176,13 +176,13 @@ public class ui_manager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
-                        .addComponent(lbl_sv_name1)
+                        .addComponent(lbl_sv_portsv)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_sv_name1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_sv_portsv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
-                        .addComponent(lbl_sv_name2)
+                        .addComponent(lbl_sv_portcl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_sv_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_sv_portcl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -290,8 +290,8 @@ public class ui_manager extends javax.swing.JFrame {
                                         .addGap(6, 6, 6)
                                         .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(86, 86, 86)
-                                        .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(61, 61, 61)
+                                        .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lbl_final_code)
@@ -318,7 +318,7 @@ public class ui_manager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
 
@@ -424,11 +424,11 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_sv_map;
     private javax.swing.JLabel lbl_sv_mode;
     private javax.swing.JLabel lbl_sv_name;
-    private javax.swing.JLabel lbl_sv_name1;
-    private javax.swing.JLabel lbl_sv_name2;
     private javax.swing.JLabel lbl_sv_parameters;
     private javax.swing.JLabel lbl_sv_password;
     private javax.swing.JLabel lbl_sv_players;
+    private javax.swing.JLabel lbl_sv_portcl;
+    private javax.swing.JLabel lbl_sv_portsv;
     private javax.swing.JPanel pnl_advanced;
     private javax.swing.JPanel pnl_main;
     private javax.swing.JSeparator separator1;
@@ -438,9 +438,9 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JTextField txt_sv_map;
     private javax.swing.JTextField txt_sv_mode;
     private javax.swing.JTextField txt_sv_name;
-    private javax.swing.JTextField txt_sv_name1;
-    private javax.swing.JTextField txt_sv_name2;
     private javax.swing.JTextArea txt_sv_parameters;
     private javax.swing.JTextField txt_sv_password;
+    private javax.swing.JTextField txt_sv_portcl;
+    private javax.swing.JTextField txt_sv_portsv;
     // End of variables declaration//GEN-END:variables
 }
