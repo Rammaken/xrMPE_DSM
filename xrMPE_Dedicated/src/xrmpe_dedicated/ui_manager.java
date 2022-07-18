@@ -87,7 +87,7 @@ public class ui_manager extends javax.swing.JFrame {
 
         lbl_sv_password.setText("Password:");
 
-        txt_sv_password.setToolTipText("Set your dedicated server map.");
+        txt_sv_password.setToolTipText("Set the password of your dedicated server.");
 
         lbl_sv_portsv.setText("Port server:");
 
