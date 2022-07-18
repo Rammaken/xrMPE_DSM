@@ -330,15 +330,19 @@ public class ui_manager extends javax.swing.JFrame {
         String sv_name = txt_sv_name.getText();
         String sv_map = txt_sv_map.getText();
         String sv_host = (String)box_sv_host.getSelectedItem();
-        String sv_fsgame = "test";
+        String sv_players = (String)box_sv_players.getSelectedItem();
+        String sv_password = txt_sv_password.getText();
+        String sv_portsv = txt_sv_portsv.getText();
+        String sv_portcl = txt_sv_portcl.getText();
         
         // Advanced settings var declaration
         String sv_mode = txt_sv_mode.getText();
         String sv_bin = txt_sv_bin.getText();
         String sv_parameters = txt_sv_parameters.getText();
+        String sv_fsgame = txt_sv_fsgame.getText();
         
         // Final code block
-        String server_config = sv_bin + " -i -fsltx " + sv_fsgame + sv_parameters + " -start server(" + sv_map + "/" + sv_mode + "/hname=" + sv_name + "/public=" + sv_host + ") client(localhost)";
+        String server_config = sv_bin + " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_mode + "/hname=" + sv_name + "/public=" + sv_host + "/maxplayers=" + sv_players + "/portsv=" + sv_portsv + "/psw=" + sv_password + ") client(localhost/portcl=" + sv_portcl + ")";
         txt_server_code.setText(server_config);
         
         // Generation of batch file
@@ -366,9 +370,13 @@ public class ui_manager extends javax.swing.JFrame {
         // Clears all the input areas in the main UI
         txt_sv_name.setText("");
         txt_sv_map.setText("");
-        txt_sv_mode.setText("df");               
+        txt_sv_mode.setText("df");
+        txt_sv_password.setText("");
         txt_sv_bin.setText("dedicated\\xrEngine.exe");        
-        txt_sv_parameters.setText("-auto_affinity");        
+        txt_sv_parameters.setText("-auto_affinity");
+        txt_sv_fsgame.setText("..\\fsgame_s.ltx");
+        txt_sv_portsv.setText("5445");
+        txt_sv_portcl.setText("5447");
         txt_server_code.setText(""); 
         getToolkit().beep(); 
         
