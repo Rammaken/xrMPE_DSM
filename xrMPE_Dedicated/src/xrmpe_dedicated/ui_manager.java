@@ -380,11 +380,11 @@ public class ui_manager extends javax.swing.JFrame {
             bw.close();
             
             getToolkit().beep(); 
-            JOptionPane.showMessageDialog(null, "File generated! Check your folder.");
+            JOptionPane.showMessageDialog(this, "File generated! Check your folder.");
                     } 
         catch (IOException ex) {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(null, "An error has occurred, try again.");
+            JOptionPane.showMessageDialog(this, "An error has occurred, try again.");
         } 
         // Finished
         
