@@ -4,6 +4,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="xrMPE Dedicated Server Manager"/>
+    <Property name="iconImages" type="java.util.List" editor="org.netbeans.modules.form.ComponentChooserEditor">
+      <ComponentRef name="null"/>
+    </Property>
     <Property name="name" type="java.lang.String" value="ui_manager" noResource="true"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
@@ -41,24 +44,22 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="pnl_main" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="btn_generate" min="-2" pref="164" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="btn_generate" min="-2" pref="156" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Component id="pnl_main" min="-2" pref="267" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="pnl_advanced" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" alignment="0" min="-2" pref="295" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                              <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="260" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="pnl_advanced" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -87,7 +88,7 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_generate" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="btn_generate" min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -111,32 +112,16 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txt_sv_map" alignment="0" pref="145" max="32767" attributes="0"/>
-                                  <Component id="txt_sv_name" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbl_sv_map" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbl_sv_name" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txt_sv_password" alignment="0" pref="145" max="32767" attributes="0"/>
-                                  <Component id="lbl_sv_password" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_map" alignment="0" pref="145" max="32767" attributes="0"/>
+                              <Component id="txt_sv_name" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_map" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_name" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbl_sv_mode" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_sv_mode" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="box_sv_host" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="box_sv_players" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lbl_sv_host" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lbl_sv_players" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_password" alignment="0" pref="145" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_password" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -151,7 +136,28 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="box_sv_host" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="lbl_sv_mode" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_sv_mode" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="box_sv_players" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_sv_host" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_players" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_sv_players1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_players2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -171,42 +177,47 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="lbl_sv_map" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_sv_map" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="lbl_sv_players" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_sv_players1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="box_sv_players" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_sv_players2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="lbl_sv_mode" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_sv_mode" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lbl_sv_password" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_sv_password" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lbl_sv_portsv" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txt_sv_portsv" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lbl_sv_portcl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txt_sv_portcl" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lbl_sv_portsv" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="lbl_sv_players" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_sv_portsv" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lbl_sv_portcl" min="-2" max="-2" attributes="0"/>
+                          <Component id="box_sv_players" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_sv_portcl" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_sv_mode" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txt_sv_mode" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -303,7 +314,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txt_sv_portsv">
           <Properties>
-            <Property name="text" type="java.lang.String" value="5445"/>
+            <Property name="text" type="java.lang.String" value="5446"/>
             <Property name="toolTipText" type="java.lang.String" value="Set the name of your dedicated server."/>
           </Properties>
         </Component>
@@ -316,6 +327,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="5447"/>
             <Property name="toolTipText" type="java.lang.String" value="Set the name of your dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_players1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0 = LAN"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_players2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1 = Internet"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -473,7 +494,6 @@
             </Property>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="wrapStyleWord" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -489,9 +509,6 @@
         <Property name="toolTipText" type="java.lang.String" value="WORK IN PROGRESS..."/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_settingsshow_about"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>
