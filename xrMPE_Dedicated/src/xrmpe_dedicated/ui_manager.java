@@ -35,19 +35,20 @@ public class ui_manager extends javax.swing.JFrame {
         txt_sv_map = new javax.swing.JTextField();
         box_sv_host = new javax.swing.JComboBox<>();
         lbl_sv_host = new javax.swing.JLabel();
-        lbl_sv_host1 = new javax.swing.JLabel();
-        box_sv_host1 = new javax.swing.JComboBox<>();
+        lbl_sv_players = new javax.swing.JLabel();
+        box_sv_players = new javax.swing.JComboBox<>();
         lbl_sv_mode = new javax.swing.JLabel();
         txt_sv_mode = new javax.swing.JTextField();
-        lbl_sv_map1 = new javax.swing.JLabel();
-        txt_sv_map1 = new javax.swing.JTextField();
+        lbl_sv_password = new javax.swing.JLabel();
+        txt_sv_password = new javax.swing.JTextField();
         pnl_advanced = new javax.swing.JPanel();
         lbl_sv_bin = new javax.swing.JLabel();
         txt_sv_bin = new javax.swing.JTextField();
         lbl_sv_parameters = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_sv_parameters = new javax.swing.JTextArea();
-        separator = new javax.swing.JSeparator();
+        lbl_sv_fsgame = new javax.swing.JLabel();
+        txt_sv_fsgame = new javax.swing.JTextField();
         btn_generate = new javax.swing.JButton();
         separator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
@@ -55,6 +56,7 @@ public class ui_manager extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txt_server_code = new javax.swing.JTextArea();
         lbl_final_code = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,19 +76,19 @@ public class ui_manager extends javax.swing.JFrame {
 
         lbl_sv_host.setText("Host type:");
 
-        lbl_sv_host1.setText("Max players:");
+        lbl_sv_players.setText("Max players:");
 
-        box_sv_host1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1" }));
-        box_sv_host1.setToolTipText("Set your dedicated server max amount of players");
+        box_sv_players.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1" }));
+        box_sv_players.setToolTipText("Set your dedicated server max amount of players");
 
         lbl_sv_mode.setText("Game mode:");
 
         txt_sv_mode.setText("df");
         txt_sv_mode.setToolTipText("Set your dedicated server game mode.\nCURRENTLY ONLY DEFENCE MODE IS AVAILABLE AND SUPPORTED, ANY OTHER GAME MODE MAY OR WILL NOT WORK.");
 
-        lbl_sv_map1.setText("Password:");
+        lbl_sv_password.setText("Password:");
 
-        txt_sv_map1.setToolTipText("Set your dedicated server map.");
+        txt_sv_password.setToolTipText("Set your dedicated server map.");
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
@@ -101,19 +103,19 @@ public class ui_manager extends javax.swing.JFrame {
                         .addComponent(lbl_sv_map)
                         .addComponent(lbl_sv_name))
                     .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txt_sv_map1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                        .addComponent(lbl_sv_map1)))
+                        .addComponent(txt_sv_password, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                        .addComponent(lbl_sv_password)))
                 .addGap(18, 18, 18)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_sv_mode)
                     .addComponent(txt_sv_mode, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(box_sv_host, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box_sv_host1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box_sv_players, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_sv_host)
-                            .addComponent(lbl_sv_host1))))
+                            .addComponent(lbl_sv_players))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         pnl_mainLayout.setVerticalGroup(
@@ -135,9 +137,9 @@ public class ui_manager extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                        .addComponent(lbl_sv_host1)
+                        .addComponent(lbl_sv_players)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box_sv_host1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(box_sv_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
@@ -145,14 +147,14 @@ public class ui_manager extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_sv_mode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                        .addComponent(lbl_sv_map1)
+                        .addComponent(lbl_sv_password)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_sv_map1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnl_advanced.setBorder(javax.swing.BorderFactory.createTitledBorder("Advanced settings (WARNING)"));
-        pnl_advanced.setToolTipText("This settings may not work because some of them are not supported at all by the game. \nContains many advanced parameters for the dedicated server.");
+        pnl_advanced.setBorder(javax.swing.BorderFactory.createTitledBorder("Advanced settings"));
+        pnl_advanced.setToolTipText("Contains many advanced parameters for the dedicated server.");
 
         lbl_sv_bin.setText("Exe bin:");
 
@@ -165,6 +167,10 @@ public class ui_manager extends javax.swing.JFrame {
         txt_sv_parameters.setText("-auto_affinity");
         jScrollPane1.setViewportView(txt_sv_parameters);
 
+        lbl_sv_fsgame.setText("Fsgame ltx file:");
+
+        txt_sv_fsgame.setText("..\\fsgame_s.ltx");
+
         javax.swing.GroupLayout pnl_advancedLayout = new javax.swing.GroupLayout(pnl_advanced);
         pnl_advanced.setLayout(pnl_advancedLayout);
         pnl_advancedLayout.setHorizontalGroup(
@@ -172,15 +178,18 @@ public class ui_manager extends javax.swing.JFrame {
             .addGroup(pnl_advancedLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnl_advancedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnl_advancedLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(txt_sv_bin))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
                     .addGroup(pnl_advancedLayout.createSequentialGroup()
                         .addGroup(pnl_advancedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_sv_bin)
-                            .addComponent(lbl_sv_parameters))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(lbl_sv_parameters)
+                            .addComponent(lbl_sv_fsgame))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnl_advancedLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(pnl_advancedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_sv_bin)
+                            .addComponent(txt_sv_fsgame))))
                 .addContainerGap())
         );
         pnl_advancedLayout.setVerticalGroup(
@@ -190,11 +199,15 @@ public class ui_manager extends javax.swing.JFrame {
                 .addComponent(lbl_sv_bin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_sv_bin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl_sv_fsgame)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_sv_fsgame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_sv_parameters)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         btn_generate.setText("Generate");
@@ -225,6 +238,19 @@ public class ui_manager extends javax.swing.JFrame {
 
         lbl_final_code.setText("Final code:");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Client settings"));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -232,31 +258,31 @@ public class ui_manager extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(separator)
+                    .addComponent(separator1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(separator1)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbl_final_code)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pnl_advanced, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(96, 96, 96)
-                                        .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 4, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                    .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnl_advanced, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 4, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_final_code)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,15 +295,18 @@ public class ui_manager extends javax.swing.JFrame {
                 .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnl_advanced, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_final_code)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnl_advanced, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132)
+                        .addComponent(lbl_final_code)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -290,6 +319,7 @@ public class ui_manager extends javax.swing.JFrame {
         String sv_name = txt_sv_name.getText();
         String sv_map = txt_sv_map.getText();
         String sv_host = (String)box_sv_host.getSelectedItem();
+        String sv_fsgame = "test";
         
         // Advanced settings var declaration
         String sv_mode = txt_sv_mode.getText();
@@ -297,7 +327,7 @@ public class ui_manager extends javax.swing.JFrame {
         String sv_parameters = txt_sv_parameters.getText();
         
         // Final code block
-        String server_config = sv_bin + " -i -fsltx ..\\fsgame_s.ltx " + sv_parameters + " -start server(" + sv_map + "/" + sv_mode + "/hname=" + sv_name + "/public=" + sv_host + ") client(localhost)";
+        String server_config = sv_bin + " -i -fsltx " + sv_fsgame + sv_parameters + " -start server(" + sv_map + "/" + sv_mode + "/hname=" + sv_name + "/public=" + sv_host + ") client(localhost)";
         txt_server_code.setText(server_config);
         
         // Generation of batch file
@@ -370,31 +400,33 @@ public class ui_manager extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> box_sv_host;
-    private javax.swing.JComboBox<String> box_sv_host1;
+    private javax.swing.JComboBox<String> box_sv_players;
     private javax.swing.JButton btn_generate;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_final_code;
     private javax.swing.JLabel lbl_sv_bin;
+    private javax.swing.JLabel lbl_sv_fsgame;
     private javax.swing.JLabel lbl_sv_host;
-    private javax.swing.JLabel lbl_sv_host1;
     private javax.swing.JLabel lbl_sv_map;
-    private javax.swing.JLabel lbl_sv_map1;
     private javax.swing.JLabel lbl_sv_mode;
     private javax.swing.JLabel lbl_sv_name;
     private javax.swing.JLabel lbl_sv_parameters;
+    private javax.swing.JLabel lbl_sv_password;
+    private javax.swing.JLabel lbl_sv_players;
     private javax.swing.JPanel pnl_advanced;
     private javax.swing.JPanel pnl_main;
-    private javax.swing.JSeparator separator;
     private javax.swing.JSeparator separator1;
     private javax.swing.JTextArea txt_server_code;
     private javax.swing.JTextField txt_sv_bin;
+    private javax.swing.JTextField txt_sv_fsgame;
     private javax.swing.JTextField txt_sv_map;
-    private javax.swing.JTextField txt_sv_map1;
     private javax.swing.JTextField txt_sv_mode;
     private javax.swing.JTextField txt_sv_name;
     private javax.swing.JTextArea txt_sv_parameters;
+    private javax.swing.JTextField txt_sv_password;
     // End of variables declaration//GEN-END:variables
 }
