@@ -55,11 +55,12 @@ public class ui_manager extends javax.swing.JFrame {
         txt_sv_fsgame = new javax.swing.JTextField();
         btn_generate = new javax.swing.JButton();
         separator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
+        btn_about = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txt_server_code = new javax.swing.JTextArea();
         lbl_final_code = new javax.swing.JLabel();
+        btn_settings = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("xrMPE Dedicated Server Manager");
@@ -90,7 +91,7 @@ public class ui_manager extends javax.swing.JFrame {
         lbl_sv_mode.setText("Game mode:");
 
         txt_sv_mode.setText("df");
-        txt_sv_mode.setToolTipText("Set your dedicated server game mode.\nCURRENTLY ONLY DEFENCE MODE IS AVAILABLE AND SUPPORTED, ANY OTHER GAME MODE MAY OR WILL NOT WORK.");
+        txt_sv_mode.setToolTipText("Set your dedicated server game mode.");
 
         lbl_sv_password.setText("Password:");
 
@@ -195,17 +196,22 @@ public class ui_manager extends javax.swing.JFrame {
         lbl_sv_bin.setText("Exe bin:");
 
         txt_sv_bin.setText("dedicated\\xrEngine.exe");
+        txt_sv_bin.setToolTipText("Set the exe binaries file path for the dedicated server.");
 
         lbl_sv_parameters.setText("Start parameters:");
 
         txt_sv_parameters.setColumns(20);
+        txt_sv_parameters.setLineWrap(true);
         txt_sv_parameters.setRows(5);
         txt_sv_parameters.setText("-auto_affinity");
+        txt_sv_parameters.setToolTipText("Set custom launch parameters for your dedicated server.");
+        txt_sv_parameters.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txt_sv_parameters);
 
         lbl_sv_fsgame.setText("Fsgame ltx file:");
 
         txt_sv_fsgame.setText("..\\fsgame_s.ltx");
+        txt_sv_fsgame.setToolTipText("Set the fsgame.ltx file path for the dedicated server");
 
         javax.swing.GroupLayout pnl_advancedLayout = new javax.swing.GroupLayout(pnl_advanced);
         pnl_advanced.setLayout(pnl_advancedLayout);
@@ -246,33 +252,48 @@ public class ui_manager extends javax.swing.JFrame {
         );
 
         btn_generate.setText("Generate");
+        btn_generate.setToolTipText("Start generation of the final run file code.");
         btn_generate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sv_generate(evt);
             }
         });
 
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_clear.setText("Clear");
+        btn_clear.setToolTipText("Restore default values to all the options.");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clear_manager(evt);
             }
         });
 
-        jButton2.setText("About");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_about.setText("About");
+        btn_about.setToolTipText("Show misc information about the program");
+        btn_about.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 show_about(evt);
             }
         });
 
         txt_server_code.setEditable(false);
+        txt_server_code.setBackground(new java.awt.Color(0, 0, 0));
         txt_server_code.setColumns(20);
+        txt_server_code.setForeground(new java.awt.Color(255, 255, 255));
         txt_server_code.setLineWrap(true);
         txt_server_code.setRows(5);
+        txt_server_code.setWrapStyleWord(true);
         jScrollPane2.setViewportView(txt_server_code);
 
         lbl_final_code.setText("Final code:");
+
+        btn_settings.setText("Settings");
+        btn_settings.setToolTipText("WORK IN PROGRESS...");
+        btn_settings.setEnabled(false);
+        btn_settings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_settingsshow_about(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -282,27 +303,29 @@ public class ui_manager extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(separator1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(64, 64, 64)
-                                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pnl_advanced, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lbl_final_code)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 4, Short.MAX_VALUE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_clear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_about)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_settings)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnl_advanced, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_final_code)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 4, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -310,8 +333,9 @@ public class ui_manager extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_clear)
+                    .addComponent(btn_about)
+                    .addComponent(btn_settings))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,6 +411,10 @@ public class ui_manager extends javax.swing.JFrame {
         
     }//GEN-LAST:event_clear_manager
 
+    private void btn_settingsshow_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_settingsshow_about
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_settingsshow_about
+
     /**
      * @param args the command line arguments
      */
@@ -425,9 +453,10 @@ public class ui_manager extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> box_sv_host;
     private javax.swing.JComboBox<String> box_sv_players;
+    private javax.swing.JButton btn_about;
+    private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_generate;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_settings;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_final_code;

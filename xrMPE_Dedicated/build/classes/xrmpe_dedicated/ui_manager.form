@@ -30,33 +30,34 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="separator1" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="pnl_main" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                  <Component id="btn_generate" min="-2" pref="156" max="-2" attributes="0"/>
-                              </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btn_clear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_about" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_settings" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="pnl_main" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pnl_advanced" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" alignment="0" min="-2" pref="295" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="btn_generate" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="pnl_advanced" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" alignment="0" min="-2" pref="295" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -70,8 +71,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_clear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_about" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_settings" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="separator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -281,7 +283,7 @@
         <Component class="javax.swing.JTextField" name="txt_sv_mode">
           <Properties>
             <Property name="text" type="java.lang.String" value="df"/>
-            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server game mode.&#xa;CURRENTLY ONLY DEFENCE MODE IS AVAILABLE AND SUPPORTED, ANY OTHER GAME MODE MAY OR WILL NOT WORK."/>
+            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server game mode."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_sv_password">
@@ -383,6 +385,7 @@
         <Component class="javax.swing.JTextField" name="txt_sv_bin">
           <Properties>
             <Property name="text" type="java.lang.String" value="dedicated\u005cxrEngine.exe" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the exe binaries file path for the dedicated server."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_sv_parameters">
@@ -400,8 +403,11 @@
             <Component class="javax.swing.JTextArea" name="txt_sv_parameters">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="-auto_affinity"/>
+                <Property name="toolTipText" type="java.lang.String" value="Set custom launch parameters for your dedicated server."/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -414,6 +420,7 @@
         <Component class="javax.swing.JTextField" name="txt_sv_fsgame">
           <Properties>
             <Property name="text" type="java.lang.String" value="..\u005cfsgame_s.ltx" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the fsgame.ltx file path for the dedicated server"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -421,6 +428,7 @@
     <Component class="javax.swing.JButton" name="btn_generate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Generate"/>
+        <Property name="toolTipText" type="java.lang.String" value="Start generation of the final run file code."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sv_generate"/>
@@ -428,17 +436,19 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="separator1">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_clear">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="toolTipText" type="java.lang.String" value="Restore default values to all the options."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clear_manager"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_about">
       <Properties>
         <Property name="text" type="java.lang.String" value="About"/>
+        <Property name="toolTipText" type="java.lang.String" value="Show misc information about the program"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="show_about"/>
@@ -454,9 +464,16 @@
         <Component class="javax.swing.JTextArea" name="txt_server_code">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="columns" type="int" value="20"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="wrapStyleWord" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -465,6 +482,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Final code:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_settings">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Settings"/>
+        <Property name="toolTipText" type="java.lang.String" value="WORK IN PROGRESS..."/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_settingsshow_about"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
