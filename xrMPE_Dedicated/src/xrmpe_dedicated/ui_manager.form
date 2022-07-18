@@ -304,7 +304,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txt_sv_password">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server map."/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the password of your dedicated server."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_sv_portsv">
