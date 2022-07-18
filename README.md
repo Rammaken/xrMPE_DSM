@@ -1,7 +1,7 @@
 # Unofficial xrMPE Dedicated Server Manager
 
 - Author: Rammaken
-- Latest version: 1.0
+- Latest version: 1.1
 - Programming Language: Java
 
 # Brief
@@ -11,7 +11,6 @@ Specially designed to make editing dedicated server more easir and noob-friendly
 # Features
 - Creates a run file automatically, no need for manual editing in notepad.
 - Highly customizable, change map, exe bin, game mode, password, ports, etc.
-- 
 
 # Requeriments
 Needs Java Runtime Environment 1.8 to run the app.
