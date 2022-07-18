@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class ui_manager extends javax.swing.JFrame {
 
-    static String app_version = "1.0";
+    static String app_version = "1.1";
     /**
      * Creates new form ui_manager
      */
