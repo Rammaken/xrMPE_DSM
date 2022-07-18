@@ -1,1 +1,0 @@
-dedicated\xrEngine.exe -i -fsltx ..\fsgame_s.ltx -auto_affinity -start server(df_baryer/df/hname=ram/public=0/maxplayers=1/portsv=5445/psw=gdrgd) client(localhost/portcl=5447)
