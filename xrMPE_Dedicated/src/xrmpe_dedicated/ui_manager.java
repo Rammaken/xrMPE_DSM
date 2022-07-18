@@ -62,6 +62,9 @@ public class ui_manager extends javax.swing.JFrame {
         lbl_final_code = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("xrMPE Dedicated Server Manager");
+        setName("ui_manager"); // NOI18N
+        setResizable(false);
 
         pnl_main.setBorder(javax.swing.BorderFactory.createTitledBorder("Main settings"));
         pnl_main.setToolTipText("Basic and main settings for the dedicated server, this parameters are safe to edit.");
@@ -290,7 +293,7 @@ public class ui_manager extends javax.swing.JFrame {
                                         .addGap(6, 6, 6)
                                         .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(61, 61, 61)
+                                        .addGap(64, 64, 64)
                                         .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

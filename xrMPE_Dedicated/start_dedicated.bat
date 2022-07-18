@@ -1,1 +1,1 @@
-dedicated\xrEnginsgdrhdhdrh -i -fsltx fjguguk -auto_affinityygjfyjfjft -start server(gdgdrh/dfghdfdf/hname=afasdf/public=1/maxplayers=4/portsv=segdrg/psw=dfhdthjth) client(localhost/portcl=rehht)
+dedicated\xrEngine.exe -i -fsltx ..\fsgame_s.ltx -auto_affinity -start server(/df/hname=/public=0/maxplayers=1/portsv=5445/psw=) client(localhost/portcl=5447)
