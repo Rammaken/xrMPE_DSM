@@ -67,6 +67,7 @@ public class ui_manager extends javax.swing.JFrame {
         txt_server_code = new javax.swing.JTextArea();
         lbl_final_code = new javax.swing.JLabel();
         btn_settings = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         ui_settings.setTitle("Settings");
         ui_settings.setBounds(new java.awt.Rectangle(0, 0, 400, 300));
@@ -395,6 +396,13 @@ public class ui_manager extends javax.swing.JFrame {
                 }
             });
 
+            jButton1.setText("Run");
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    run_server(evt);
+                }
+            });
+
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
@@ -411,13 +419,14 @@ public class ui_manager extends javax.swing.JFrame {
                             .addComponent(btn_about)
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(56, 56, 56)
-                                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(9, 9, 9)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(17, 17, 17)
+                                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -445,9 +454,14 @@ public class ui_manager extends javax.swing.JFrame {
                     .addComponent(lbl_final_code)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(15, 15, 15))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(15, 15, 15))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(43, 43, 43))))
             );
 
             pack();
@@ -540,6 +554,15 @@ public class ui_manager extends javax.swing.JFrame {
         getToolkit().beep();
     }//GEN-LAST:event_clear_settings
 
+    private void run_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_run_server
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler" + file_path + "\\" + file_name + file_extension);
+        } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "ERROR \r\n File is not generated yet or file path it's not set correctly");
+        }
+        
+    }//GEN-LAST:event_run_server
+
     public static void main(String args[]) {
         /* Set thes Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -582,6 +605,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JButton btn_restore_default;
     private javax.swing.JButton btn_settings;
     private javax.swing.ButtonGroup group_host_type;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_file_ext;
