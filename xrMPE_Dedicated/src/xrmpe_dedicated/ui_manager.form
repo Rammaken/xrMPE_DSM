@@ -330,9 +330,9 @@
                       <Component id="txt_sv_name" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbl_sv_map" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="rdn_host_internet" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_sv_map" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -643,7 +643,7 @@
     <Component class="javax.swing.JButton" name="btn_settings">
       <Properties>
         <Property name="text" type="java.lang.String" value="Settings"/>
-        <Property name="toolTipText" type="java.lang.String" value="WORK IN PROGRESS..."/>
+        <Property name="toolTipText" type="java.lang.String" value="Show the app settings menu."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="show_settings"/>

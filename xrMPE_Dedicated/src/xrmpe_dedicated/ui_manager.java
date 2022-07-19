@@ -1,6 +1,7 @@
 package xrmpe_dedicated;
 
 // Libraries
+import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -260,9 +261,9 @@ public class ui_manager extends javax.swing.JFrame {
                         .addComponent(rdn_host_lan)
                         .addComponent(txt_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbl_sv_map)
-                        .addComponent(rdn_host_internet))
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(rdn_host_internet)
+                        .addComponent(lbl_sv_map))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(pnl_mainLayout.createSequentialGroup()
@@ -387,7 +388,7 @@ public class ui_manager extends javax.swing.JFrame {
             lbl_final_code.setText("Final code:");
 
             btn_settings.setText("Settings");
-            btn_settings.setToolTipText("WORK IN PROGRESS...");
+            btn_settings.setToolTipText("Show the app settings menu.");
             btn_settings.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     show_settings(evt);
@@ -483,17 +484,17 @@ public class ui_manager extends javax.swing.JFrame {
         
         // Generation of batch file
         try {
-            FileWriter file_generate = new FileWriter(file_path + "/" + file_name + file_extension);
+            FileWriter file_generate = new FileWriter(file_path + "\\" + file_name + file_extension);
             BufferedWriter bw = new BufferedWriter(file_generate);
             txt_server_code.write(bw);
             bw.close();
             
             getToolkit().beep(); 
-            JOptionPane.showMessageDialog(this, "File generated! Check your folder.");
+            JOptionPane.showMessageDialog(this, "File generated! Check your folder. \r\n\r\nFile path: " + file_path + "\\" + file_name + file_extension);
                     } 
         catch (IOException ex) {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "An error has occurred, try again.");
+            JOptionPane.showMessageDialog(this, "An error has occurred, check and try again.");
         } 
         // Finished
         
@@ -539,9 +540,6 @@ public class ui_manager extends javax.swing.JFrame {
         getToolkit().beep();
     }//GEN-LAST:event_clear_settings
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set thes Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
