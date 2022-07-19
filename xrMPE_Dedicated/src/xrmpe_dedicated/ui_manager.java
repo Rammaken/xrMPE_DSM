@@ -301,6 +301,7 @@ public class ui_manager extends javax.swing.JFrame {
             lbl_sv_parameters.setText("Start parameters:");
 
             txt_sv_parameters.setColumns(20);
+            txt_sv_parameters.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
             txt_sv_parameters.setLineWrap(true);
             txt_sv_parameters.setRows(5);
             txt_sv_parameters.setText("-auto_affinity");
