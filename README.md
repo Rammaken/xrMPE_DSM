@@ -1,7 +1,7 @@
 # Unofficial xrMPE Dedicated Server Manager
 
 - Author: Rammaken
-- Latest version: 1.1
+- Latest version: 1.2
 - Programming Language: Java
 
 # Brief
