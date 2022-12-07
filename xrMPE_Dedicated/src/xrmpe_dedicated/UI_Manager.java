@@ -2,10 +2,7 @@ package xrmpe_dedicated;
 
 // Libraries
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import java.awt.Desktop;
-import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.*;
@@ -67,6 +64,9 @@ public class UI_Manager extends javax.swing.JFrame {
         btn_clear = new javax.swing.JButton();
         btn_about = new javax.swing.JButton();
         log_console = new javax.swing.JTextField();
+
+        ui_preview.setTitle("Preview");
+        ui_preview.setResizable(false);
 
         input_preview_code.setEditable(false);
         input_preview_code.setBackground(new java.awt.Color(0, 0, 0));
@@ -152,9 +152,18 @@ public class UI_Manager extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ui_mainLayout.createSequentialGroup()
+                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(str_password)
+                            .addGroup(ui_mainLayout.createSequentialGroup()
+                                .addComponent(str_host)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_host))
+                            .addComponent(rdn_lan)
+                            .addComponent(rdn_internet))
+                        .addContainerGap(226, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ui_mainLayout.createSequentialGroup()
                         .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(input_sv_map, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                            .addComponent(input_sv_password, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_mainLayout.createSequentialGroup()
                                 .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(str_server_name, javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,28 +171,16 @@ public class UI_Manager extends javax.swing.JFrame {
                                         .addComponent(str_map)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(info_map)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(36, 36, 36)
+                                .addGap(0, 117, Short.MAX_VALUE))
+                            .addComponent(input_sv_map, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(input_sv_name))
+                        .addGap(18, 18, 18)
                         .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(str_players)
                             .addComponent(box_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(str_gamemode)
                             .addComponent(rdn_defence))
-                        .addGap(33, 33, 33))
-                    .addGroup(ui_mainLayout.createSequentialGroup()
-                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(input_sv_password)
-                            .addGroup(ui_mainLayout.createSequentialGroup()
-                                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(str_password)
-                                    .addGroup(ui_mainLayout.createSequentialGroup()
-                                        .addComponent(str_host)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(info_host))
-                                    .addComponent(rdn_lan)
-                                    .addComponent(rdn_internet))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(141, 141, 141))))
+                        .addGap(33, 33, 33))))
         );
         ui_mainLayout.setVerticalGroup(
             ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,18 +285,17 @@ public class UI_Manager extends javax.swing.JFrame {
                                 .addComponent(str_exe_bin)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(info_exe_bin))
-                            .addGroup(ui_advancedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(input_exe_bin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_advancedLayout.createSequentialGroup()
-                                    .addComponent(str_fsgame)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(info_fsgame))
-                                .addComponent(input_fsgame, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(ui_advancedLayout.createSequentialGroup()
+                                .addComponent(str_fsgame)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(info_fsgame))
                             .addGroup(ui_advancedLayout.createSequentialGroup()
                                 .addComponent(str_parameters)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(info_parameters)))
-                        .addGap(0, 26, Short.MAX_VALUE)))
+                        .addGap(0, 185, Short.MAX_VALUE))
+                    .addComponent(input_exe_bin)
+                    .addComponent(input_fsgame))
                 .addContainerGap())
         );
         ui_advancedLayout.setVerticalGroup(
@@ -360,8 +356,9 @@ public class UI_Manager extends javax.swing.JFrame {
             }
         });
 
+        log_console.setEditable(false);
         log_console.setBackground(new java.awt.Color(0, 0, 0));
-        log_console.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        log_console.setFont(new java.awt.Font("Consolas", 0, 10)); // NOI18N
         log_console.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -415,6 +412,7 @@ public class UI_Manager extends javax.swing.JFrame {
     }//GEN-LAST:event_showinfo_host
 
     private void show_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_about
+        log_console.setText("Showing About window...");
         JOptionPane.showMessageDialog(this, "== Unofficial xrMPE Dedicated Server Manager ==\nAuthor & Coder: Rammaken\nApp made with Java using Netbeans IDE 14\nWrapped using Launch4J", "About", 3);
     }//GEN-LAST:event_show_about
 
@@ -453,10 +451,10 @@ public class UI_Manager extends javax.swing.JFrame {
             var_sv_map = input_sv_map.getText();
             var_sv_players = (String)box_players.getSelectedItem();
             var_sv_mode = "df";
-            var_bin =
-            
+            var_sv_bin = input_exe_bin.getText();
+            var_sv_fsgame = input_fsgame.getText();
+            var_sv_parameters = input_parameters.getText();
 
-            
         // Final code block
         String server_data = var_sv_bin + " -i -fsltx " + var_sv_fsgame + " " + var_sv_parameters + " -start server(" + var_sv_map + "/" + var_sv_mode + "/hname=" + var_sv_name + "/public=" + var_sv_host + "/maxplayers=" + var_sv_players + "/psw=" + var_sv_password + ") client(localhost)";
         
@@ -472,8 +470,8 @@ public class UI_Manager extends javax.swing.JFrame {
         
         } catch (IOException ex) {
         // Error messages
-        JOptionPane.showMessageDialog(this, "Unexpected Error!\nPlease, check your parameters and try again...", "Alert", 0);
         log_console.setText("ERROR!");
+        JOptionPane.showMessageDialog(this, "Unexpected Error!\nPlease, check your parameters and try again...", "Alert", 0);
         }
             
         } else {
@@ -514,6 +512,9 @@ public class UI_Manager extends javax.swing.JFrame {
             var_sv_map = input_sv_map.getText();
             var_sv_players = (String)box_players.getSelectedItem();
             var_sv_mode = "df";
+            var_sv_bin = input_exe_bin.getText();
+            var_sv_fsgame = input_fsgame.getText();
+            var_sv_parameters = input_parameters.getText();
             
         // Final code block
         String server_data = var_sv_bin + " -i -fsltx " + var_sv_fsgame + " " + var_sv_parameters + " -start server(" + var_sv_map + "/" + var_sv_mode + "/hname=" + var_sv_name + "/public=" + var_sv_host + "/maxplayers=" + var_sv_players + "/psw=" + var_sv_password + ") client(localhost)";
