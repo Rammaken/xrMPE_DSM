@@ -7,6 +7,7 @@
 # Brief
 A simple, portable, lightweight and open source GUI app that lets you create and automatically generate a custom dedicated server run file for xrMPE mod.
 Specially designed to make editing dedicated server more easir and noob-friendly.
+
 ![Preview](xrmpe_dsm_preview.png)
 
 # Features
