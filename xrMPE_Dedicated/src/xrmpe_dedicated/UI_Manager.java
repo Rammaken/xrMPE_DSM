@@ -24,9 +24,9 @@ public class UI_Manager extends javax.swing.JFrame {
         str_server_name = new javax.swing.JLabel();
         input_sv_name = new javax.swing.JTextField();
         str_map = new javax.swing.JLabel();
-        input_map = new javax.swing.JTextField();
+        input_sv_map = new javax.swing.JTextField();
         str_password = new javax.swing.JLabel();
-        input_password = new javax.swing.JTextField();
+        input_sv_password = new javax.swing.JTextField();
         rdn_lan = new javax.swing.JRadioButton();
         str_host = new javax.swing.JLabel();
         info_host = new javax.swing.JButton();
@@ -57,14 +57,23 @@ public class UI_Manager extends javax.swing.JFrame {
         btn_about = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("xrMPE Dedicated Server Manager");
+        setLocationByPlatform(true);
+        setResizable(false);
 
         str_server_name.setText("Server name:");
 
         input_sv_name.setText("xrMPE_server");
+        input_sv_name.setToolTipText("Insert the in-game name of your server");
 
         str_map.setText("Map:");
 
-        str_password.setText("Password");
+        input_sv_map.setToolTipText("Select the map you wish to play");
+
+        str_password.setText("Password:");
+
+        input_sv_password.setToolTipText("Set a password for your server (If not, just leave in blank)");
+        input_sv_password.setFocusTraversalPolicyProvider(true);
 
         rdn_lan.setSelected(true);
         rdn_lan.setText("LAN");
@@ -103,71 +112,76 @@ public class UI_Manager extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ui_mainLayout.createSequentialGroup()
-                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(str_password)
-                            .addGroup(ui_mainLayout.createSequentialGroup()
-                                .addComponent(str_host)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(info_host))
-                            .addComponent(rdn_lan))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(ui_mainLayout.createSequentialGroup()
-                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(input_map, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(input_password, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_mainLayout.createSequentialGroup()
-                                    .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(str_server_name, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_mainLayout.createSequentialGroup()
-                                            .addComponent(str_map)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(info_map)))
-                                    .addGap(0, 0, Short.MAX_VALUE)))
-                            .addComponent(rdn_internet))
-                        .addGap(18, 18, 18)
+                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(input_sv_map, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_mainLayout.createSequentialGroup()
+                                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(str_server_name, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ui_mainLayout.createSequentialGroup()
+                                        .addComponent(str_map)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(info_map)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(36, 36, 36)
                         .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(str_players)
                             .addComponent(box_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(str_gamemode)
                             .addComponent(rdn_defence))
-                        .addGap(51, 51, 51))))
+                        .addGap(33, 33, 33))
+                    .addGroup(ui_mainLayout.createSequentialGroup()
+                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(input_sv_password)
+                            .addGroup(ui_mainLayout.createSequentialGroup()
+                                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(str_password)
+                                    .addGroup(ui_mainLayout.createSequentialGroup()
+                                        .addComponent(str_host)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(info_host))
+                                    .addComponent(rdn_lan)
+                                    .addComponent(rdn_internet))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(141, 141, 141))))
         );
         ui_mainLayout.setVerticalGroup(
             ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ui_mainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(str_server_name)
-                    .addComponent(str_players))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(str_map)
-                        .addComponent(str_gamemode))
-                    .addComponent(info_map, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rdn_defence))
+                    .addGroup(ui_mainLayout.createSequentialGroup()
+                        .addComponent(str_server_name)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(str_map)
+                            .addComponent(info_map, javax.swing.GroupLayout.PREFERRED_SIZE, 18, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ui_mainLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(str_players)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(str_gamemode)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_defence)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(str_password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(input_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ui_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(info_host, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(str_host, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(str_host))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdn_lan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdn_internet)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         ui_tabs.addTab("Main", ui_main);
@@ -175,6 +189,7 @@ public class UI_Manager extends javax.swing.JFrame {
         str_exe_bin.setText("Executable bin:");
 
         input_exe_bin.setText("dedicated/xrEngine.exe");
+        input_exe_bin.setToolTipText("");
 
         input_fsgame.setText("dedicated/xrEngine.exe");
 
@@ -323,10 +338,8 @@ public class UI_Manager extends javax.swing.JFrame {
                     .addComponent(btn_clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_about, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(3, 3, 3)))
+                    .addComponent(btn_edit, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(btn_about, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -368,11 +381,11 @@ public class UI_Manager extends javax.swing.JFrame {
     private javax.swing.JTextField input_cl;
     private javax.swing.JTextField input_exe_bin;
     private javax.swing.JTextField input_fsgame;
-    private javax.swing.JTextField input_map;
     private javax.swing.JTextArea input_parameters;
-    private javax.swing.JTextField input_password;
     private javax.swing.JTextField input_portsv;
+    private javax.swing.JTextField input_sv_map;
     private javax.swing.JTextField input_sv_name;
+    private javax.swing.JTextField input_sv_password;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton rdn_defence;
     private javax.swing.JRadioButton rdn_internet;
