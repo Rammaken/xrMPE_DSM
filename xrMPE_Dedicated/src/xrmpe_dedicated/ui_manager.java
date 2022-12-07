@@ -1,7 +1,11 @@
 package xrmpe_dedicated;
 
 // Libraries
+<<<<<<< HEAD
 import com.formdev.flatlaf.FlatIntelliJLaf;
+=======
+import java.awt.event.KeyEvent;
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,6 +16,7 @@ public class ui_manager extends javax.swing.JFrame {
     static String file_extension = ".bat";
     static String file_path = "..\\";
     static String file_name = "start_dedicated";
+    static String sv_host = "0";
     
     public ui_manager() {
         initComponents();
@@ -31,29 +36,50 @@ public class ui_manager extends javax.swing.JFrame {
         txt_file_name = new javax.swing.JTextField();
         btn_restore_default = new javax.swing.JButton();
         btn_apply = new javax.swing.JButton();
+<<<<<<< HEAD
         rdn_host_type = new javax.swing.ButtonGroup();
         btn_generate = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         btn_about = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+=======
+        group_host_type = new javax.swing.ButtonGroup();
+        pnl_main = new javax.swing.JPanel();
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
         lbl_sv_name = new javax.swing.JLabel();
         txt_sv_name = new javax.swing.JTextField();
         lbl_sv_map = new javax.swing.JLabel();
         txt_sv_map = new javax.swing.JTextField();
+<<<<<<< HEAD
         lbl_sv_password = new javax.swing.JLabel();
         txt_sv_password = new javax.swing.JTextField();
+=======
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
         lbl_sv_host = new javax.swing.JLabel();
         rnd_host_lan = new javax.swing.JRadioButton();
         rnd_host_internet = new javax.swing.JRadioButton();
         lbl_sv_players = new javax.swing.JLabel();
         box_sv_players = new javax.swing.JComboBox<>();
         lbl_sv_mode = new javax.swing.JLabel();
+<<<<<<< HEAD
         jRadioButton1 = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+=======
+        txt_sv_mode = new javax.swing.JTextField();
+        lbl_sv_password = new javax.swing.JLabel();
+        txt_sv_password = new javax.swing.JTextField();
+        lbl_sv_portsv = new javax.swing.JLabel();
+        txt_sv_portsv = new javax.swing.JTextField();
+        lbl_sv_portcl = new javax.swing.JLabel();
+        txt_sv_portcl = new javax.swing.JTextField();
+        rdn_host_lan = new javax.swing.JRadioButton();
+        rdn_host_internet = new javax.swing.JRadioButton();
+        pnl_advanced = new javax.swing.JPanel();
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
         lbl_sv_bin = new javax.swing.JLabel();
         txt_sv_bin = new javax.swing.JTextField();
         lbl_sv_fsgame = new javax.swing.JLabel();
@@ -74,6 +100,10 @@ public class ui_manager extends javax.swing.JFrame {
         ui_settings.setBounds(new java.awt.Rectangle(0, 0, 400, 300));
         ui_settings.setMinimumSize(new java.awt.Dimension(400, 300));
         ui_settings.setName("ui_cfg"); // NOI18N
+<<<<<<< HEAD
+=======
+        ui_settings.setResizable(false);
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
         ui_settings.setSize(new java.awt.Dimension(400, 300));
 
         panel_runfile_cfg.setBorder(javax.swing.BorderFactory.createTitledBorder("Run file settings"));
@@ -206,6 +236,21 @@ public class ui_manager extends javax.swing.JFrame {
 
             txt_sv_map.setToolTipText("Set your dedicated server map.");
 
+<<<<<<< HEAD
+=======
+            lbl_sv_host.setText("Host type:");
+
+            lbl_sv_players.setText("Max players:");
+
+            box_sv_players.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "3", "2", "1" }));
+            box_sv_players.setToolTipText("Set your dedicated server max amount of players");
+
+            lbl_sv_mode.setText("Game mode:");
+
+            txt_sv_mode.setText("df");
+            txt_sv_mode.setToolTipText("Set your dedicated server game mode.");
+
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
             lbl_sv_password.setText("Password:");
 
             txt_sv_password.setToolTipText("Set the password of your dedicated server.");
@@ -221,10 +266,18 @@ public class ui_manager extends javax.swing.JFrame {
 
             lbl_sv_players.setText("Max players:");
 
+<<<<<<< HEAD
             box_sv_players.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "3", "2", "1" }));
             box_sv_players.setToolTipText("Set your dedicated server max amount of players");
 
             lbl_sv_mode.setText("Game mode:");
+=======
+            group_host_type.add(rdn_host_lan);
+            rdn_host_lan.setText("LAN");
+
+            group_host_type.add(rdn_host_internet);
+            rdn_host_internet.setText("Internet");
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
 
             jRadioButton1.setSelected(true);
             jRadioButton1.setText("Defence");
@@ -247,6 +300,7 @@ public class ui_manager extends javax.swing.JFrame {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
+<<<<<<< HEAD
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(lbl_sv_host)
@@ -297,10 +351,72 @@ public class ui_manager extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txt_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
+=======
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_sv_map, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                .addComponent(txt_sv_name)
+                                .addComponent(lbl_sv_map)
+                                .addComponent(lbl_sv_name))
+                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_sv_password, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                .addComponent(lbl_sv_password)))
+                        .addGroup(pnl_mainLayout.createSequentialGroup()
+                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_sv_portsv)
+                                .addComponent(lbl_sv_portsv))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_sv_portcl)
+                                .addComponent(lbl_sv_portcl))))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbl_sv_mode)
+                        .addComponent(txt_sv_mode, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rdn_host_lan)
+                        .addComponent(rdn_host_internet)
+                        .addComponent(box_sv_players, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnl_mainLayout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbl_sv_host)
+                                .addComponent(lbl_sv_players))))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            pnl_mainLayout.setVerticalGroup(
+                pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnl_mainLayout.createSequentialGroup()
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbl_sv_name, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lbl_sv_host, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(rdn_host_lan)
+                        .addComponent(txt_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(rdn_host_internet)
+                        .addComponent(lbl_sv_map))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnl_mainLayout.createSequentialGroup()
+                            .addComponent(txt_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lbl_sv_password)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txt_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnl_mainLayout.createSequentialGroup()
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
                             .addComponent(lbl_sv_players)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(box_sv_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box_sv_players, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
+                            .addComponent(lbl_sv_portsv)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(lbl_sv_mode)
@@ -322,6 +438,18 @@ public class ui_manager extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(rnd_host_internet)
                     .addContainerGap(47, Short.MAX_VALUE))
+=======
+                            .addComponent(txt_sv_portsv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
+                            .addComponent(lbl_sv_portcl)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txt_sv_portcl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
+                            .addComponent(lbl_sv_mode)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txt_sv_mode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap())
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
             );
 
             jTabbedPane1.addTab("Main", jPanel1);
@@ -339,6 +467,7 @@ public class ui_manager extends javax.swing.JFrame {
             lbl_sv_parameters.setText("Start parameters:");
 
             txt_sv_parameters.setColumns(20);
+            txt_sv_parameters.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
             txt_sv_parameters.setLineWrap(true);
             txt_sv_parameters.setRows(5);
             txt_sv_parameters.setText("-auto_affinity");
@@ -446,7 +575,45 @@ public class ui_manager extends javax.swing.JFrame {
             btn_generate1.setToolTipText("Start generation of the final run file code.");
             btn_generate1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
+<<<<<<< HEAD
                     btn_generate1sv_generate(evt);
+=======
+                    sv_generate(evt);
+                }
+            });
+
+            btn_clear.setText("Clear");
+            btn_clear.setToolTipText("Restore default values to all the options.");
+            btn_clear.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    clear_manager(evt);
+                }
+            });
+
+            btn_about.setText("About");
+            btn_about.setToolTipText("Show misc information about the program");
+            btn_about.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    show_about(evt);
+                }
+            });
+
+            txt_server_code.setEditable(false);
+            txt_server_code.setBackground(new java.awt.Color(0, 0, 0));
+            txt_server_code.setColumns(20);
+            txt_server_code.setForeground(new java.awt.Color(255, 255, 255));
+            txt_server_code.setLineWrap(true);
+            txt_server_code.setRows(5);
+            jScrollPane2.setViewportView(txt_server_code);
+
+            lbl_final_code.setText("Final code:");
+
+            btn_settings.setText("Settings");
+            btn_settings.setToolTipText("Show the app settings menu.");
+            btn_settings.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    show_settings(evt);
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
                 }
             });
 
@@ -461,8 +628,34 @@ public class ui_manager extends javax.swing.JFrame {
                         .addComponent(btn_generate1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                         .addComponent(btn_about, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                        .addComponent(separator1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btn_clear)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btn_settings)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btn_about)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(pnl_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(74, 74, 74)
+                                    .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lbl_final_code)
+                                    .addGap(0, 271, Short.MAX_VALUE))
+                                .addComponent(pnl_advanced, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2))))
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
                     .addContainerGap())
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -477,10 +670,29 @@ public class ui_manager extends javax.swing.JFrame {
                         .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_about, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_generate1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                    .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(pnl_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnl_advanced, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(lbl_final_code)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(15, 15, 15))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_generate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
             );
 
             pack();
@@ -490,7 +702,16 @@ public class ui_manager extends javax.swing.JFrame {
         // Main  settings var declaration
         String sv_name = txt_sv_name.getText();
         String sv_map = txt_sv_map.getText();
-        String sv_host = (String)box_sv_host.getSelectedItem();
+
+        // If server is LAN
+        if(rdn_host_lan.isSelected()) {
+            sv_host = "0";
+        }
+        // If server is Internet
+        if(rdn_host_internet.isSelected()) {
+            sv_host = "1";
+        }
+            
         String sv_players = (String)box_sv_players.getSelectedItem();
         String sv_password = txt_sv_password.getText();
         String sv_portsv = txt_sv_portsv.getText();
@@ -508,17 +729,17 @@ public class ui_manager extends javax.swing.JFrame {
         
         // Generation of batch file
         try {
-            FileWriter file_generate = new FileWriter(file_path + "/" + file_name + file_extension);
+            FileWriter file_generate = new FileWriter(file_path + "\\" + file_name + file_extension);
             BufferedWriter bw = new BufferedWriter(file_generate);
             txt_server_code.write(bw);
             bw.close();
             
             getToolkit().beep(); 
-            JOptionPane.showMessageDialog(this, "File generated! Check your folder.");
+            JOptionPane.showMessageDialog(this, "File generated! Check your folder. \r\n\r\nFile path: " + file_path + "\\" + file_name + file_extension);
                     } 
         catch (IOException ex) {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "An error has occurred, try again.");
+            JOptionPane.showMessageDialog(this, "An error has occurred, check and try again.");
         } 
         // Finished
         
@@ -541,7 +762,6 @@ public class ui_manager extends javax.swing.JFrame {
         txt_sv_portsv.setText("5446");
         txt_sv_portcl.setText("5447");
         txt_server_code.setText(""); 
-        box_sv_players.setSelectedItem(1);
         getToolkit().beep(); 
         
     }//GEN-LAST:event_clear_manager
@@ -560,6 +780,7 @@ public class ui_manager extends javax.swing.JFrame {
         getToolkit().beep();
     }//GEN-LAST:event_clear_settings
 
+<<<<<<< HEAD
     private void btn_generate1sv_generate(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_generate1sv_generate
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_generate1sv_generate
@@ -567,6 +788,8 @@ public class ui_manager extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+=======
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
     public static void main(String args[]) {
         try {
         UIManager.setLookAndFeel(new FlatIntelliJLaf());
@@ -590,6 +813,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JButton btn_generate;
     private javax.swing.JButton btn_generate1;
     private javax.swing.JButton btn_restore_default;
+<<<<<<< HEAD
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -599,6 +823,10 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
+=======
+    private javax.swing.JButton btn_settings;
+    private javax.swing.ButtonGroup group_host_type;
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lbl_file_ext;
@@ -616,9 +844,17 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_sv_portcl;
     private javax.swing.JLabel lbl_sv_portsv;
     private javax.swing.JPanel panel_runfile_cfg;
+<<<<<<< HEAD
     private javax.swing.ButtonGroup rdn_host_type;
     private javax.swing.JRadioButton rnd_host_internet;
     private javax.swing.JRadioButton rnd_host_lan;
+=======
+    private javax.swing.JPanel pnl_advanced;
+    private javax.swing.JPanel pnl_main;
+    private javax.swing.JRadioButton rdn_host_internet;
+    private javax.swing.JRadioButton rdn_host_lan;
+    private javax.swing.JSeparator separator1;
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
     private javax.swing.JTextField txt_file_name;
     private javax.swing.JTextField txt_file_path;
     private javax.swing.JTextField txt_sv_bin;

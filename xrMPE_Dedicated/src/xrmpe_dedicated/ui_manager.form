@@ -12,6 +12,10 @@
           <Dimension value="[400, 300]"/>
         </Property>
         <Property name="name" type="java.lang.String" value="ui_cfg" noResource="true"/>
+<<<<<<< HEAD
+=======
+        <Property name="resizable" type="boolean" value="false"/>
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[400, 300]"/>
         </Property>
@@ -160,7 +164,11 @@
         </Component>
       </SubComponents>
     </Container>
+<<<<<<< HEAD
     <Component class="javax.swing.ButtonGroup" name="rdn_host_type">
+=======
+    <Component class="javax.swing.ButtonGroup" name="group_host_type">
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -193,9 +201,43 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btn_generate" max="32767" attributes="0"/>
                   <Component id="btn_generate1" pref="178" max="32767" attributes="0"/>
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="separator1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btn_clear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_settings" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_about" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Component id="pnl_main" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                              <Component id="btn_generate" min="-2" pref="99" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="271" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="pnl_advanced" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -224,12 +266,369 @@
                   <Component id="btn_about" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btn_generate1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace max="32767" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="separator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="pnl_main" max="32767" attributes="0"/>
+                  <Component id="pnl_advanced" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lbl_final_code" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btn_generate" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< HEAD
+=======
+    <Container class="javax.swing.JPanel" name="pnl_main">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Main settings"/>
+          </Border>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Basic and main settings for the dedicated server, this parameters are safe to edit."/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_map" alignment="0" pref="145" max="32767" attributes="0"/>
+                              <Component id="txt_sv_name" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_map" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_name" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_password" alignment="0" pref="145" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_password" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_portsv" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_portsv" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_sv_portcl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_sv_portcl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lbl_sv_mode" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_sv_mode" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="rdn_host_lan" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rdn_host_internet" min="-2" max="-2" attributes="0"/>
+                      <Component id="box_sv_players" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_sv_host" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_players" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lbl_sv_name" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_sv_host" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rdn_host_lan" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_sv_name" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rdn_host_internet" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_sv_map" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txt_sv_map" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lbl_sv_password" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txt_sv_password" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="lbl_sv_players" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="box_sv_players" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lbl_sv_portsv" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txt_sv_portsv" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lbl_sv_portcl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txt_sv_portcl" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lbl_sv_mode" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txt_sv_mode" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lbl_sv_name">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Server name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_name">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Set the name of your dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_map">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Map:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_map">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server map."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_host">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Host type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_players">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Max players:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="box_sv_players">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="4"/>
+                <StringItem index="1" value="3"/>
+                <StringItem index="2" value="2"/>
+                <StringItem index="3" value="1"/>
+              </StringArray>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server max amount of players"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_mode">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Game mode:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_mode">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="df"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set your dedicated server game mode."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_password">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Password:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_password">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Set the password of your dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_portsv">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Port server:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_portsv">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="5446"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the name of your dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_portcl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Port client:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_portcl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="5447"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the name of your dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rdn_host_lan">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="group_host_type"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="LAN"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rdn_host_internet">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="group_host_type"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Internet"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_advanced">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Advanced settings"/>
+          </Border>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Contains many advanced parameters for the dedicated server."/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_sv_bin" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_parameters" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_sv_fsgame" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txt_sv_bin" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txt_sv_fsgame" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="lbl_sv_bin" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txt_sv_bin" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lbl_sv_fsgame" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txt_sv_fsgame" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lbl_sv_parameters" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lbl_sv_bin">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exe bin:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_bin">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="dedicated\u005cxrEngine.exe" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the exe binaries file path for the dedicated server."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_sv_parameters">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Start parameters:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txt_sv_parameters">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="12" style="0"/>
+                </Property>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="-auto_affinity"/>
+                <Property name="toolTipText" type="java.lang.String" value="Set custom launch parameters for your dedicated server."/>
+                <Property name="wrapStyleWord" type="boolean" value="true"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="lbl_sv_fsgame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fsgame ltx file:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_sv_fsgame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..\u005cfsgame_s.ltx" containsInvalidXMLChars="true"/>
+            <Property name="toolTipText" type="java.lang.String" value="Set the fsgame.ltx file path for the dedicated server"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
     <Component class="javax.swing.JButton" name="btn_generate">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -698,11 +1097,21 @@
     </Container>
     <Component class="javax.swing.JButton" name="btn_generate1">
       <Properties>
+<<<<<<< HEAD
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/xrmpe_dedicated/icon_code.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View/edit code"/>
         <Property name="toolTipText" type="java.lang.String" value="Start generation of the final run file code."/>
+=======
+        <Property name="text" type="java.lang.String" value="Final code:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_settings">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Settings"/>
+        <Property name="toolTipText" type="java.lang.String" value="Show the app settings menu."/>
+>>>>>>> e4d79d89393d520a28d29144255638d91bebb999
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_generate1sv_generate"/>
