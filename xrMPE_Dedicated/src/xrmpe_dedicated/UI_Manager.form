@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="rdngrp_host_type">
     </Component>
@@ -231,6 +231,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showinfo_host"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rdn_internet">
               <Properties>
@@ -259,9 +262,6 @@
                   </StringArray>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="box_playersActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -279,6 +279,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showinfo_map"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -386,12 +389,13 @@
             <Component class="javax.swing.JTextField" name="input_exe_bin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="dedicated/xrEngine.exe"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="Set the file dir of your xrEngine.exe"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="input_fsgame">
               <Properties>
-                <Property name="text" type="java.lang.String" value="dedicated/xrEngine.exe"/>
+                <Property name="text" type="java.lang.String" value="..\u005cfsgame_s.ltx" containsInvalidXMLChars="true"/>
+                <Property name="toolTipText" type="java.lang.String" value="Set the file dir of your fsgame.ltx"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="str_fsgame">
@@ -420,6 +424,7 @@
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="-auto_affinity&#xa;"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Set new extra parameters."/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
                   </Properties>
                 </Component>
@@ -439,9 +444,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="5446"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="input_portsvActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="input_cl">
               <Properties>
@@ -456,6 +458,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showinfo_parameters"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="info_fsgame">
               <Properties>
@@ -465,6 +470,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showinfo_fsgame"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="info_exe_bin">
               <Properties>
@@ -474,6 +482,9 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showinfo_exe_bin"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

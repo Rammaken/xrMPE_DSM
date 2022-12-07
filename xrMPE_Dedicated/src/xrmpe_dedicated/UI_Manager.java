@@ -83,6 +83,11 @@ public class UI_Manager extends javax.swing.JFrame {
         info_host.setIcon(new javax.swing.ImageIcon(getClass().getResource("/xrmpe_dedicated/icon_question.png"))); // NOI18N
         info_host.setBorderPainted(false);
         info_host.setContentAreaFilled(false);
+        info_host.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showinfo_host(evt);
+            }
+        });
 
         rdn_internet.setText("Internet");
 
@@ -92,17 +97,17 @@ public class UI_Manager extends javax.swing.JFrame {
         str_gamemode.setText("Game mode:");
 
         box_players.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "3", "2", "1" }));
-        box_players.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                box_playersActionPerformed(evt);
-            }
-        });
 
         str_players.setText("Max players:");
 
         info_map.setIcon(new javax.swing.ImageIcon(getClass().getResource("/xrmpe_dedicated/icon_question.png"))); // NOI18N
         info_map.setBorderPainted(false);
         info_map.setContentAreaFilled(false);
+        info_map.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showinfo_map(evt);
+            }
+        });
 
         javax.swing.GroupLayout ui_mainLayout = new javax.swing.GroupLayout(ui_main);
         ui_main.setLayout(ui_mainLayout);
@@ -189,9 +194,10 @@ public class UI_Manager extends javax.swing.JFrame {
         str_exe_bin.setText("Executable bin:");
 
         input_exe_bin.setText("dedicated/xrEngine.exe");
-        input_exe_bin.setToolTipText("");
+        input_exe_bin.setToolTipText("Set the file dir of your xrEngine.exe");
 
-        input_fsgame.setText("dedicated/xrEngine.exe");
+        input_fsgame.setText("..\\fsgame_s.ltx");
+        input_fsgame.setToolTipText("Set the file dir of your fsgame.ltx");
 
         str_fsgame.setText("fsgame file:");
 
@@ -202,6 +208,7 @@ public class UI_Manager extends javax.swing.JFrame {
         input_parameters.setLineWrap(true);
         input_parameters.setRows(5);
         input_parameters.setText("-auto_affinity\n");
+        input_parameters.setToolTipText("Set new extra parameters.");
         input_parameters.setWrapStyleWord(true);
         jScrollPane1.setViewportView(input_parameters);
 
@@ -210,25 +217,35 @@ public class UI_Manager extends javax.swing.JFrame {
         str_portcl.setText("Port client:");
 
         input_portsv.setText("5446");
-        input_portsv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_portsvActionPerformed(evt);
-            }
-        });
 
         input_cl.setText("5447");
 
         info_parameters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/xrmpe_dedicated/icon_question.png"))); // NOI18N
         info_parameters.setBorderPainted(false);
         info_parameters.setContentAreaFilled(false);
+        info_parameters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showinfo_parameters(evt);
+            }
+        });
 
         info_fsgame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/xrmpe_dedicated/icon_question.png"))); // NOI18N
         info_fsgame.setBorderPainted(false);
         info_fsgame.setContentAreaFilled(false);
+        info_fsgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showinfo_fsgame(evt);
+            }
+        });
 
         info_exe_bin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/xrmpe_dedicated/icon_question.png"))); // NOI18N
         info_exe_bin.setBorderPainted(false);
         info_exe_bin.setContentAreaFilled(false);
+        info_exe_bin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showinfo_exe_bin(evt);
+            }
+        });
 
         javax.swing.GroupLayout ui_advancedLayout = new javax.swing.GroupLayout(ui_advanced);
         ui_advanced.setLayout(ui_advancedLayout);
@@ -346,13 +363,25 @@ public class UI_Manager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void box_playersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box_playersActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_box_playersActionPerformed
+    private void showinfo_map(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showinfo_map
+        JOptionPane.showMessageDialog(this, "This is a field for maps, you can put official released maps or custom ones made by the community.\nYou can download custom maps in official xrMPE Discord server.\nMaps are usually named -df_MAPNAME-, if you don't know what to write, here is a list with official maps names:\n\ndf_derevnya\ndf_prost_anom\ndf_baryer\ndf_zastava", "Information about: Maps", 1);
+    }//GEN-LAST:event_showinfo_map
 
-    private void input_portsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_portsvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_portsvActionPerformed
+    private void showinfo_host(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showinfo_host
+        JOptionPane.showMessageDialog(this, "This is a host type selector, you can select if you want your server just to be visible on a Local Network or in Global internet and xrMPE server list -requires portforwarding-", "Information about: Host types", 1);
+    }//GEN-LAST:event_showinfo_host
+
+    private void showinfo_exe_bin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showinfo_exe_bin
+        JOptionPane.showMessageDialog(this, "You can change the executable file dir of your dedicated executable binarie.\nIt is usually located on \"bin\\dedicated\\\" folder.", "Information about: Executable bin", 1);
+    }//GEN-LAST:event_showinfo_exe_bin
+
+    private void showinfo_fsgame(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showinfo_fsgame
+        JOptionPane.showMessageDialog(this, "You can change the configs file dir of your dedicated server.\nIt is usually located in the root folder of your game.", "Information about: fsgame", 1);
+    }//GEN-LAST:event_showinfo_fsgame
+
+    private void showinfo_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showinfo_parameters
+        JOptionPane.showMessageDialog(this, "You can add or remove extra parameters for your dedicated servers before running it.", "Information about: Start parameters", 1);
+    }//GEN-LAST:event_showinfo_parameters
 
     public static void main(String args[]) {
         try {
