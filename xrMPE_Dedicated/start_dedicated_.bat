@@ -1,0 +1,1 @@
+dedicated/xrEngine.exe -i -fsltx ..\fsgame_s.ltx -auto_affinity -start server(/df/hname=xrMPE_server/public=0/maxplayers=4/psw=) client(localhost)
