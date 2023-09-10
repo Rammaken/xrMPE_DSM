@@ -95,6 +95,8 @@ public class ui_manager extends javax.swing.JFrame {
         combo_sv_map = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
         alternate_sv_password = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        combo_sv_maxplayers = new javax.swing.JComboBox<>();
 
         ui_about.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ui_about.setTitle("About");
@@ -186,7 +188,7 @@ public class ui_manager extends javax.swing.JFrame {
         btn_launch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_launch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_launchActionPerformed(evt);
+                launch_server(evt);
             }
         });
 
@@ -370,14 +372,20 @@ public class ui_manager extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_players.png"))); // NOI18N
+        jLabel7.setText("Players:");
+
+        combo_sv_maxplayers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
         pnl_mainLayout.setHorizontalGroup(
             pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(pnl_mainLayout.createSequentialGroup()
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -397,7 +405,6 @@ public class ui_manager extends javax.swing.JFrame {
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rdn_host_internet)
@@ -409,19 +416,23 @@ public class ui_manager extends javax.swing.JFrame {
                                     .addComponent(rdn_game_defence)
                                     .addComponent(jLabel4)))
                             .addGroup(pnl_mainLayout.createSequentialGroup()
-                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(input_sv_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel5)))
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(alternate_sv_password))
+                                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(input_sv_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addComponent(alternate_sv_password)))))))
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jLabel7))
+                                    .addComponent(jLabel5)
+                                    .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnl_mainLayout.setVerticalGroup(
@@ -437,11 +448,14 @@ public class ui_manager extends javax.swing.JFrame {
                     .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(alternate_sv_password)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alternate_sv_password))
+                    .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
@@ -476,7 +490,7 @@ public class ui_manager extends javax.swing.JFrame {
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         tabs.addTab("Main", new javax.swing.ImageIcon(getClass().getResource("/Source/icon_server.png")), pnl_main); // NOI18N
@@ -501,19 +515,45 @@ public class ui_manager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_generateActionPerformed
 
-    private void btn_launchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_launchActionPerformed
+    private void launch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_server
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder(".\\dedicated\\xrEngine.exe", " -i -fsltx ..\\fsgame_s.ltx -noprefetch -auto_affinity -start server(df_mwinsurrection/df/hname=xrMPE_cbt/maxplayers=4/public=1) client(localhost)");
+            String sv_name = input_sv_name.getText();
+            String sv_password = input_sv_password.getText();
+            
+            String sv_map = (String)combo_sv_map.getSelectedItem();
+            String sv_maxplayers = (String)combo_sv_maxplayers.getSelectedItem();
+            String sv_host = "0";
+            String sv_game = "df";
+            
+            if(rdn_host_lan.isSelected()) {
+                sv_host = "0";
+            } else if(rdn_host_internet.isSelected()) {
+                sv_host = "1";
+            }
+            
+            if(rdn_game_defence.isSelected()) {
+                sv_game = "df";
+            } else if(rdn_game_coop.isSelected()) {
+                sv_game = "coop";
+            }
+            
+            String sv_exebin = input_exe_bin.getText();
+            String sv_fsgame = input_fsgame.getText();
+            String sv_parameters = input_parameters.getText();
+           
+            ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
             Process process = processBuilder.start();
-            OutputStream outputStream = process.getOutputStream();
-            JOptionPane.showMessageDialog(null, outputStream);
-            processBuilder.redirectOutput(new File("salida.txt"));
+            btn_launch.setText("Running server...");
             int exitCode = process.waitFor();
-
-            if (exitCode == 0) {
-                JOptionPane.showMessageDialog(null, "La aplicación se ejecutó exitosamente.");
+            
+            if(exitCode == 0) {
+                btn_launch.setText("Launch server");
+                getToolkit().beep();
+                JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
             } else {
-                JOptionPane.showMessageDialog(null, "La aplicación terminó con un código de salida no nulo: " + exitCode);
+                btn_launch.setText("Launch server");
+                getToolkit().beep();
+                JOptionPane.showMessageDialog(null, "Server process crashed/failed.\nCheck appdata log for more information.\n\nOutput: " + exitCode, "Error", 0);
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -521,7 +561,7 @@ public class ui_manager extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", 0);
             
         }
-    }//GEN-LAST:event_btn_launchActionPerformed
+    }//GEN-LAST:event_launch_server
 
     private void alternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_password
         if(alternate_sv_password.isSelected()) {
@@ -535,6 +575,7 @@ public class ui_manager extends javax.swing.JFrame {
     private void clear_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_parameters
         input_sv_name.setText("xrmpe_server");
         combo_sv_map.setSelectedIndex(0);
+        combo_sv_maxplayers.setSelectedIndex(0);
         input_sv_password.setText("");
         rdn_host_lan.setSelected(true);
         rdn_game_defence.setSelected(true);
@@ -596,21 +637,24 @@ public class ui_manager extends javax.swing.JFrame {
             String temp_map = String.valueOf(profile_data.get(3));
             combo_sv_map.setSelectedItem(temp_map);
             
-            if(profile_data.get(4).equals("host_lan")) {
+            String temp_players = String.valueOf(profile_data.get(4));
+            combo_sv_maxplayers.setSelectedItem(temp_players);
+            
+            if(profile_data.get(5).equals("host_lan")) {
                 rdn_host_lan.setSelected(true);
-            } else if(profile_data.get(4).equals("host_internet")) {
+            } else if(profile_data.get(5).equals("host_internet")) {
                 rdn_host_internet.setSelected(true);
             }
             
-            if(profile_data.get(5).equals("game_df")) {
+            if(profile_data.get(6).equals("game_df")) {
                 rdn_game_defence.setSelected(true);
-            } else if(profile_data.get(5).equals("game_coop")) {
+            } else if(profile_data.get(6).equals("game_coop")) {
                 rdn_game_coop.setSelected(true);
             }
                         
-            input_exe_bin.setText(profile_data.get(6));
-            input_fsgame.setText(profile_data.get(7));
-            input_parameters.setText(profile_data.get(8));
+            input_exe_bin.setText(profile_data.get(7));
+            input_fsgame.setText(profile_data.get(8));
+            input_parameters.setText(profile_data.get(9));
             
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile loaded successfully!");
@@ -647,6 +691,7 @@ public class ui_manager extends javax.swing.JFrame {
         }
         
         save_profile_data.add((String)combo_sv_map.getSelectedItem());
+        save_profile_data.add((String)combo_sv_maxplayers.getSelectedItem());
         
         if(rdn_host_lan.isSelected()) {
             save_profile_data.add("host_lan");
@@ -666,7 +711,7 @@ public class ui_manager extends javax.swing.JFrame {
         
             FileWriter profile_file = new FileWriter(save_profile_data_root + ".dat");
             BufferedWriter bw = new BufferedWriter(profile_file);
-            bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8));
+            bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8) + "\n" + save_profile_data.get(9));
             bw.close();
             
             getToolkit().beep();
@@ -713,6 +758,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JButton btn_load_profile;
     private javax.swing.JButton btn_save_profile;
     private javax.swing.JComboBox<String> combo_sv_map;
+    private javax.swing.JComboBox<String> combo_sv_maxplayers;
     private javax.swing.ButtonGroup filter_gamemode;
     private javax.swing.ButtonGroup filter_host;
     private javax.swing.JTextField input_exe_bin;
@@ -726,6 +772,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
