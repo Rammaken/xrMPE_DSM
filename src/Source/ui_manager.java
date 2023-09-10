@@ -551,7 +551,6 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_show_about
 
     private void btn_add_aplicar1confirmar_adicion_articulo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_aplicar1confirmar_adicion_articulo
-        // Redirecciona al navegador
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/Rammaken/xrMPE_DSM"));
         } catch (Exception e) {
@@ -613,6 +612,7 @@ public class ui_manager extends javax.swing.JFrame {
             input_fsgame.setText(profile_data.get(7));
             input_parameters.setText(profile_data.get(8));
             
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile loaded successfully!");
         } catch (IOException e) {
             e.printStackTrace();
@@ -668,6 +668,8 @@ public class ui_manager extends javax.swing.JFrame {
             BufferedWriter bw = new BufferedWriter(profile_file);
             bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8));
             bw.close();
+            
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile saved successfully!");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Something went wrong when saving the profile, please try again...", "Error", 0);
