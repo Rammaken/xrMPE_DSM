@@ -49,6 +49,37 @@ public class ui_manager extends javax.swing.JFrame {
             combo_sv_map.addItem("MAPS NOT FOUND!");
         }
     }
+    
+    public void loadCrashLog() {
+        try {
+            String temp_user_name = System.getProperty("user.name");
+            BufferedReader br = new BufferedReader(new FileReader("..\\_appdata_server\\logs\\xray_" + temp_user_name + ".log"));
+            String line;
+            boolean found = false;
+            
+            ArrayList<String> crash_data = new ArrayList<>();
+
+            while ((line = br.readLine()) != null) {
+                if (line.contains("FATAL ERROR")) {
+                    found = true;
+                }
+
+                if (found) {
+                    crash_data.add(line);
+
+                    // Verifica si se han almacenado las 11 líneas posteriores
+                    if (crash_data.size() >= 11) {
+                        break;
+                    }
+                }
+            }
+            
+            JOptionPane.showMessageDialog(null, crash_data.get(0) + "\n" + crash_data.get(1) + "\n" + crash_data.get(2) + "\n" + crash_data.get(3) +"\n" + crash_data.get(4) +"\n" + crash_data.get(5) +"\n" + crash_data.get(6) +"\n" + crash_data.get(7) +"\n" + crash_data.get(8) +"\n" + crash_data.get(9) +"\n" + crash_data.get(10), "Crash log", 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Failed at trying to automtically retrieve crash log. \nCheck '_appdata_server' folder for full information.");
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -211,7 +242,7 @@ public class ui_manager extends javax.swing.JFrame {
         btn_generate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_generate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_generateActionPerformed(evt);
+                generate_run(evt);
             }
         });
 
@@ -377,6 +408,8 @@ public class ui_manager extends javax.swing.JFrame {
         jLabel7.setText("Players:");
 
         combo_sv_maxplayers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        combo_sv_maxplayers.setSelectedIndex(3);
+        combo_sv_maxplayers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
@@ -511,10 +544,6 @@ public class ui_manager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_generateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_generateActionPerformed
-
     private void launch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_server
         try {
             String sv_name = input_sv_name.getText();
@@ -543,17 +572,15 @@ public class ui_manager extends javax.swing.JFrame {
            
             ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
             Process process = processBuilder.start();
-            btn_launch.setText("Running server...");
             int exitCode = process.waitFor();
             
             if(exitCode == 0) {
-                btn_launch.setText("Launch server");
                 getToolkit().beep();
                 JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
             } else {
-                btn_launch.setText("Launch server");
                 getToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Server process crashed/failed.\nCheck appdata log for more information.\n\nOutput: " + exitCode, "Error", 0);
+                JOptionPane.showMessageDialog(null, "Server process crashed/failed.\n\nOutput code: " + exitCode, "Error", 0);
+                loadCrashLog();
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -732,6 +759,42 @@ public class ui_manager extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_block_space
+
+    private void generate_run(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_run
+        try {
+            String sv_name = input_sv_name.getText();
+            String sv_password = input_sv_password.getText();
+            
+            String sv_map = (String)combo_sv_map.getSelectedItem();
+            String sv_maxplayers = (String)combo_sv_maxplayers.getSelectedItem();
+            String sv_host = "0";
+            String sv_game = "df";
+            
+            if(rdn_host_lan.isSelected()) {
+                sv_host = "0";
+            } else if(rdn_host_internet.isSelected()) {
+                sv_host = "1";
+            }
+            
+            if(rdn_game_defence.isSelected()) {
+                sv_game = "df";
+            } else if(rdn_game_coop.isSelected()) {
+                sv_game = "coop";
+            }
+            
+            String sv_exebin = input_exe_bin.getText();
+            String sv_fsgame = input_fsgame.getText();
+            String sv_parameters = input_parameters.getText();
+            
+            FileWriter profile_file = new FileWriter("startdedicated_" + sv_game + "_map_" + sv_map + ".bat");
+            BufferedWriter bw = new BufferedWriter(profile_file);
+            bw.write(sv_exebin + " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
+            bw.close();
+            JOptionPane.showMessageDialog(null, "Run file generated successfully. Check your folder.");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Something went wrong when generating the dedicated server run file, please try again...", "Error", 0);
+        }
+    }//GEN-LAST:event_generate_run
 
     public static void main(String args[]) {
         try {
