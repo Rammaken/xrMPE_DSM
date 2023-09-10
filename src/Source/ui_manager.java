@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.URI;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -22,11 +21,14 @@ public class ui_manager extends javax.swing.JFrame {
 
     public ui_manager() {
         initComponents();
+        
+        // Initial settings and process
         this.setIconImage(new ImageIcon(getClass().getResource("app_icon.png")).getImage());
         this.setLocationRelativeTo(null);
         loadMaps();
     }
     
+    // Searchs for a file with the maps list for the selector in UI
     public void loadMaps() {
         String maps_list_root = ".\\maps_list.txt";
         
@@ -50,6 +52,7 @@ public class ui_manager extends javax.swing.JFrame {
         }
     }
     
+    // Search for the latest log and reads the crash output
     public void loadCrashLog() {
         try {
             String temp_user_name = System.getProperty("user.name");
@@ -105,8 +108,8 @@ public class ui_manager extends javax.swing.JFrame {
         toolbar = new javax.swing.JToolBar();
         btn_save_profile = new javax.swing.JButton();
         btn_load_profile = new javax.swing.JButton();
-        btn_about = new javax.swing.JButton();
         btn_help = new javax.swing.JButton();
+        btn_about = new javax.swing.JButton();
         input_sv_password = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -288,6 +291,14 @@ public class ui_manager extends javax.swing.JFrame {
         });
         toolbar.add(btn_load_profile);
 
+        btn_help.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_help.png"))); // NOI18N
+        btn_help.setText("Load addon");
+        btn_help.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_help.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_help.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        toolbar.add(btn_help);
+
         btn_about.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_about.png"))); // NOI18N
         btn_about.setText("About");
@@ -301,15 +312,6 @@ public class ui_manager extends javax.swing.JFrame {
             }
         });
         toolbar.add(btn_about);
-
-        btn_help.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_help.png"))); // NOI18N
-        btn_help.setText("Help");
-        btn_help.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_help.setFocusable(false);
-        btn_help.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btn_help.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        toolbar.add(btn_help);
 
         input_sv_password.setToolTipText("Set a password for your dedicated server");
         input_sv_password.setEnabled(false);
@@ -545,7 +547,9 @@ public class ui_manager extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void launch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_server
+        // Launchs the server with the selected settings
         try {
+            // Declares vars and stores data from selected options
             String sv_name = input_sv_name.getText();
             String sv_password = input_sv_password.getText();
             
@@ -570,10 +574,14 @@ public class ui_manager extends javax.swing.JFrame {
             String sv_fsgame = input_fsgame.getText();
             String sv_parameters = input_parameters.getText();
            
+            // Creates and launches a process with these settings
             ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
             Process process = processBuilder.start();
+            
+            // Locks the program to look forward to the server process
             int exitCode = process.waitFor();
             
+            // Shows a output depending on what happened after terminating the server
             if(exitCode == 0) {
                 getToolkit().beep();
                 JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
@@ -591,6 +599,7 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_launch_server
 
     private void alternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_password
+        // Enables / disables server password 
         if(alternate_sv_password.isSelected()) {
             input_sv_password.setEnabled(true);
         } else {
@@ -600,6 +609,7 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_alternate_password
 
     private void clear_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_parameters
+        // Clears and put default values
         input_sv_name.setText("xrmpe_server");
         combo_sv_map.setSelectedIndex(0);
         combo_sv_maxplayers.setSelectedIndex(0);
@@ -612,6 +622,7 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_clear_parameters
 
     private void show_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_about
+        // Shows about window
         ui_about.setSize(458, 280);
         ui_about.setLocationRelativeTo(null);
         ui_about.setIconImage(new ImageIcon(getClass().getResource("icon_about.png")).getImage());
@@ -619,6 +630,7 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_show_about
 
     private void btn_add_aplicar1confirmar_adicion_articulo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_aplicar1confirmar_adicion_articulo
+        // Opens browser with GitHub URL
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/Rammaken/xrMPE_DSM"));
         } catch (Exception e) {
@@ -627,62 +639,60 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_add_aplicar1confirmar_adicion_articulo
 
     private void load_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_profile
-        // Selects Database file path
+        // Select the path where the profile is stored
         JFileChooser load_profile_choose = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Server profiles (.dat)", "dat");
         load_profile_choose.setFileFilter(filter);
         load_profile_choose.setCurrentDirectory(new java.io.File("."));
         load_profile_choose.showOpenDialog(null);
         File file_load_profile_path = load_profile_choose.getSelectedFile();
-        
+
         String profile_data_root = file_load_profile_path.getAbsolutePath();
-        
+
+        // Starts reading the profile file and writes all the settings
         try {
             BufferedReader br = new BufferedReader(new FileReader(profile_data_root));
             
-            // Leer cada línea del archivo
             String linea;
-
             ArrayList<String> profile_data = new ArrayList<String>();
-
             while ((linea = br.readLine()) != null) {
                 profile_data.add(linea);
-            }   
-            
+            }
+
             input_sv_name.setText(profile_data.get(0));
-            
-            if(profile_data.get(1).equals("password_enabled")) {
+
+            if (profile_data.get(1).equals("password_enabled")) {
                 alternate_sv_password.setSelected(true);
                 input_sv_password.setEnabled(true);
                 input_sv_password.setText(profile_data.get(2));
-            } else if(profile_data.get(1).equals("password_disabled")) {
+            } else if (profile_data.get(1).equals("password_disabled")) {
                 alternate_sv_password.setSelected(false);
                 input_sv_password.setEnabled(false);
                 input_sv_password.setText("");
             }
-            
+
             String temp_map = String.valueOf(profile_data.get(3));
             combo_sv_map.setSelectedItem(temp_map);
-            
+
             String temp_players = String.valueOf(profile_data.get(4));
             combo_sv_maxplayers.setSelectedItem(temp_players);
-            
-            if(profile_data.get(5).equals("host_lan")) {
+
+            if (profile_data.get(5).equals("host_lan")) {
                 rdn_host_lan.setSelected(true);
-            } else if(profile_data.get(5).equals("host_internet")) {
+            } else if (profile_data.get(5).equals("host_internet")) {
                 rdn_host_internet.setSelected(true);
             }
-            
-            if(profile_data.get(6).equals("game_df")) {
+
+            if (profile_data.get(6).equals("game_df")) {
                 rdn_game_defence.setSelected(true);
-            } else if(profile_data.get(6).equals("game_coop")) {
+            } else if (profile_data.get(6).equals("game_coop")) {
                 rdn_game_coop.setSelected(true);
             }
-                        
+
             input_exe_bin.setText(profile_data.get(7));
             input_fsgame.setText(profile_data.get(8));
             input_parameters.setText(profile_data.get(9));
-            
+
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile loaded successfully!");
         } catch (IOException e) {
@@ -693,6 +703,7 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_load_profile
 
     private void save_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_profile
+        // Selects where to save the new profile
         JFileChooser save_profile_choose = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Server profiles (.dat)", "dat");
         save_profile_choose.setFileFilter(filter);
@@ -701,46 +712,46 @@ public class ui_manager extends javax.swing.JFrame {
         File file_save_profile_path = save_profile_choose.getSelectedFile();
         
         String save_profile_data_root = file_save_profile_path.getAbsolutePath();
-        
-        
 
+        // Starts retrieving all the values and store them inside the profile file
         try {
             ArrayList<String> save_profile_data = new ArrayList<String>();
-        
-        save_profile_data.add(input_sv_name.getText());
-        
-        if(alternate_sv_password.isSelected()) {
-            save_profile_data.add("password_enabled");
-            save_profile_data.add(input_sv_password.getText());
-        } else {
-            save_profile_data.add("password_disabled");
-            save_profile_data.add("");
-        }
-        
-        save_profile_data.add((String)combo_sv_map.getSelectedItem());
-        save_profile_data.add((String)combo_sv_maxplayers.getSelectedItem());
-        
-        if(rdn_host_lan.isSelected()) {
-            save_profile_data.add("host_lan");
-        } else if(rdn_host_internet.isSelected()) {
-            save_profile_data.add("host_internet");
-        }
-        
-        if(rdn_game_defence.isSelected()) {
-            save_profile_data.add("game_df");
-        } else if(rdn_game_coop.isSelected()) {
-            save_profile_data.add("game_coop");
-        }
 
-        save_profile_data.add(input_exe_bin.getText());
-        save_profile_data.add(input_fsgame.getText());
-        save_profile_data.add(input_parameters.getText());
-        
+            save_profile_data.add(input_sv_name.getText());
+
+            if (alternate_sv_password.isSelected()) {
+                save_profile_data.add("password_enabled");
+                save_profile_data.add(input_sv_password.getText());
+            } else {
+                save_profile_data.add("password_disabled");
+                save_profile_data.add("");
+            }
+
+            save_profile_data.add((String) combo_sv_map.getSelectedItem());
+            save_profile_data.add((String) combo_sv_maxplayers.getSelectedItem());
+
+            if (rdn_host_lan.isSelected()) {
+                save_profile_data.add("host_lan");
+            } else if (rdn_host_internet.isSelected()) {
+                save_profile_data.add("host_internet");
+            }
+
+            if (rdn_game_defence.isSelected()) {
+                save_profile_data.add("game_df");
+            } else if (rdn_game_coop.isSelected()) {
+                save_profile_data.add("game_coop");
+            }
+
+            save_profile_data.add(input_exe_bin.getText());
+            save_profile_data.add(input_fsgame.getText());
+            save_profile_data.add(input_parameters.getText());
+
+            // Creates the profile and writes in it all the values
             FileWriter profile_file = new FileWriter(save_profile_data_root + ".dat");
             BufferedWriter bw = new BufferedWriter(profile_file);
             bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8) + "\n" + save_profile_data.get(9));
             bw.close();
-            
+
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile saved successfully!");
         } catch (IOException ex) {
@@ -749,18 +760,21 @@ public class ui_manager extends javax.swing.JFrame {
     }//GEN-LAST:event_save_profile
 
     private void block_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_enter
+        // Prevents the user from pressing Enter
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             evt.consume();
         }
     }//GEN-LAST:event_block_enter
 
     private void block_space(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_space
+        // Prevents the user from pressing Space
         if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
             evt.consume();
         }
     }//GEN-LAST:event_block_space
 
     private void generate_run(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_run
+        // Declare vars and stores all the values from the selected settings
         try {
             String sv_name = input_sv_name.getText();
             String sv_password = input_sv_password.getText();
@@ -786,6 +800,7 @@ public class ui_manager extends javax.swing.JFrame {
             String sv_fsgame = input_fsgame.getText();
             String sv_parameters = input_parameters.getText();
             
+            // Creates a .bat file and writes the full launch arguments with the retrieved values
             FileWriter profile_file = new FileWriter("startdedicated_" + sv_game + "_map_" + sv_map + ".bat");
             BufferedWriter bw = new BufferedWriter(profile_file);
             bw.write(sv_exebin + " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
