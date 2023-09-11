@@ -648,8 +648,10 @@ public class ui_manager extends javax.swing.JFrame {
         // Clears and put default values
         input_sv_name.setText("xrmpe_server");
         combo_sv_map.setSelectedIndex(0);
-        combo_sv_maxplayers.setSelectedIndex(0);
+        combo_sv_maxplayers.setSelectedIndex(3);
         input_sv_password.setText("");
+        input_sv_password.setEnabled(false);
+        alternate_sv_password.setSelected(false);
         rdn_host_lan.setSelected(true);
         rdn_game_defence.setSelected(true);
         input_exe_bin.setText("dedicated\\xrEngine.exe");
@@ -731,16 +733,6 @@ public class ui_manager extends javax.swing.JFrame {
             input_exe_bin.setText(profile_data.get(7));
             input_fsgame.setText(profile_data.get(8));
             input_parameters.setText(profile_data.get(9));
-            
-            sv_addon = profile_data.get(10);
-            
-            if(sv_addon == null) {
-                status_addon.setText("No addons loaded...");
-                status_addon.setForeground(new java.awt.Color(153,153,153));
-            } else {
-                status_addon.setText("Addon loaded!");
-                status_addon.setForeground(new java.awt.Color(255, 0, 0));
-            }
 
             getToolkit().beep();
             JOptionPane.showMessageDialog(null, "Profile loaded successfully!");
@@ -794,13 +786,11 @@ public class ui_manager extends javax.swing.JFrame {
             save_profile_data.add(input_exe_bin.getText());
             save_profile_data.add(input_fsgame.getText());
             save_profile_data.add(input_parameters.getText());
-            
-            save_profile_data.add(sv_addon);
 
             // Creates the profile and writes in it all the values
             FileWriter profile_file = new FileWriter(save_profile_data_root + ".dat");
             BufferedWriter bw = new BufferedWriter(profile_file);
-            bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8) + "\n" + save_profile_data.get(9) + "\n" + save_profile_data.get(10));
+            bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8) + "\n" + save_profile_data.get(9));
             bw.close();
 
             getToolkit().beep();
