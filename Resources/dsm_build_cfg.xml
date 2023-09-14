@@ -2,25 +2,27 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Workspace\xrMPE_DSM\xrMPE_Dedicated\dist\xrMPE_Dedicated.jar</jar>
-  <outfile>C:\Users\Rammaken\Downloads\xrmpe_dsm.exe</outfile>
+  <jar>E:\Workspace\Java\xrMPE_DSM\dist\xrMPE_DSM.jar</jar>
+  <outfile>C:\Users\Rammaken\Desktop\dsm.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl>http://java.com/download</downloadUrl>
+  <downloadUrl></downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Workspace\xrMPE_DSM\Resources\dsm_icon.ico</icon>
+  <icon>E:\Workspace\Java\xrMPE_DSM\Resources\dsm_icon.ico</icon>
+  <classPath>
+    <mainClass>Source.ui_manager</mainClass>
+    <cp>lib/flatlaf-3.2.1.jar</cp>
+  </classPath>
   <jre>
-    <path></path>
-    <bundledJre64Bit>false</bundledJre64Bit>
-    <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>1.8</minVersion>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>18</minVersion>
     <maxVersion></maxVersion>
-    <jdkPreference>preferJre</jdkPreference>
-    <runtimeBits>64/32</runtimeBits>
   </jre>
 </launch4jConfig>

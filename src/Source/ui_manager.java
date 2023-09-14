@@ -403,9 +403,11 @@ public class ui_manager extends javax.swing.JFrame {
         jLabel5.setText("Map:");
 
         combo_sv_map.setToolTipText("Select the map for your dedicated server");
+        combo_sv_map.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         alternate_sv_password.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         alternate_sv_password.setText("Enable");
+        alternate_sv_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         alternate_sv_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alternate_password(evt);
