@@ -109,7 +109,6 @@ public class ui_manager extends javax.swing.JFrame {
         toolbar = new javax.swing.JToolBar();
         btn_save_profile = new javax.swing.JButton();
         btn_load_profile = new javax.swing.JButton();
-        btn_load_addon = new javax.swing.JButton();
         btn_about = new javax.swing.JButton();
         input_sv_password = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -133,6 +132,10 @@ public class ui_manager extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         combo_sv_maxplayers = new javax.swing.JComboBox<>();
         status_addon = new javax.swing.JLabel();
+        btn_load_addon = new javax.swing.JButton();
+        btn_unload_addon = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         ui_about.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ui_about.setTitle("About");
@@ -212,7 +215,7 @@ public class ui_manager extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("xrMPE Dedicated Server Manager v1.4");
+        setTitle("xrMPE Dedicated Server Manager v1.5");
         setResizable(false);
 
         tabs.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -292,19 +295,6 @@ public class ui_manager extends javax.swing.JFrame {
             }
         });
         toolbar.add(btn_load_profile);
-
-        btn_load_addon.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_load_addon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_load_addon.png"))); // NOI18N
-        btn_load_addon.setText("Load addon");
-        btn_load_addon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_load_addon.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btn_load_addon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_load_addon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                load_addon(evt);
-            }
-        });
-        toolbar.add(btn_load_addon);
 
         btn_about.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_about.png"))); // NOI18N
@@ -424,66 +414,100 @@ public class ui_manager extends javax.swing.JFrame {
 
         status_addon.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         status_addon.setForeground(new java.awt.Color(153, 153, 153));
+        status_addon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         status_addon.setText("No addons loaded...");
+
+        btn_load_addon.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_load_addon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_load_addon.png"))); // NOI18N
+        btn_load_addon.setText("Load");
+        btn_load_addon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_load_addon.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_load_addon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_load_addon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                load_addon(evt);
+            }
+        });
+
+        btn_unload_addon.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_unload_addon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_unload_addon.png"))); // NOI18N
+        btn_unload_addon.setText("Unload");
+        btn_unload_addon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_unload_addon.setEnabled(false);
+        btn_unload_addon.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_unload_addon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_unload_addon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unload_addon(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_add.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
         pnl_mainLayout.setHorizontalGroup(
             pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(pnl_mainLayout.createSequentialGroup()
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(20, 20, 20)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(str_exe_bin)
-                            .addComponent(str_parameters)
-                            .addComponent(str_fsgame)
-                            .addComponent(input_exe_bin)
-                            .addComponent(input_fsgame)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)))
-                    .addGroup(pnl_mainLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(alternate_sv_password))
-                            .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(input_sv_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(input_sv_name, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(pnl_mainLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel7))
+                            .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnl_mainLayout.createSequentialGroup()
+                                .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))))
+                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(rdn_game_coop)
+                            .addComponent(rdn_game_defence))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rdn_host_internet)
-                                    .addComponent(rdn_host_lan)
-                                    .addComponent(jLabel3))
-                                .addGap(26, 26, 26)
-                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rdn_game_coop)
-                                    .addComponent(rdn_game_defence)
-                                    .addComponent(jLabel4))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pnl_mainLayout.createSequentialGroup()
-                                    .addGap(2, 2, 2)
-                                    .addComponent(jLabel7))
-                                .addComponent(jLabel5)
-                                .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
-                                .addComponent(status_addon)
-                                .addGap(25, 25, 25))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btn_generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(rdn_host_lan))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                                        .addComponent(btn_load_addon, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_unload_addon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(status_addon, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(str_exe_bin)
+                    .addComponent(str_parameters)
+                    .addComponent(str_fsgame)
+                    .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                        .addComponent(input_fsgame, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(input_exe_bin, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btn_generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         pnl_mainLayout.setVerticalGroup(
             pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,35 +518,43 @@ public class ui_manager extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(alternate_sv_password)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(combo_sv_map))
+                .addGap(11, 11, 11)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(alternate_sv_password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rdn_host_lan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(8, 8, 8)
                         .addComponent(rdn_host_internet))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rdn_game_defence)
-                            .addComponent(status_addon))
+                        .addComponent(rdn_game_defence)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdn_game_coop)))
-                .addGap(18, 18, 18)
+                        .addComponent(rdn_game_coop))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
+                        .addComponent(status_addon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_load_addon, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_unload_addon, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(str_exe_bin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(input_exe_bin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -533,8 +565,8 @@ public class ui_manager extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(str_parameters)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_generate)
@@ -542,10 +574,23 @@ public class ui_manager extends javax.swing.JFrame {
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabs.addTab("Main", new javax.swing.ImageIcon(getClass().getResource("/Source/icon_server.png")), pnl_main); // NOI18N
+        tabs.addTab("Main", new javax.swing.ImageIcon(getClass().getResource("/Source/icon_tab_xrmpe.png")), pnl_main); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 401, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 568, Short.MAX_VALUE)
+        );
+
+        tabs.addTab("Shadow of COOP", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -557,120 +602,13 @@ public class ui_manager extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void launch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_server
-        // Launchs the server with the selected settings
-        try {
-            // Declares vars and stores data from selected options
-            String sv_name = input_sv_name.getText();
-            String sv_password = input_sv_password.getText();
-            
-            String sv_map = (String)combo_sv_map.getSelectedItem();
-            String sv_maxplayers = (String)combo_sv_maxplayers.getSelectedItem();
-            String sv_host = "0";
-            String sv_game = "df";
-            
-            if(rdn_host_lan.isSelected()) {
-                sv_host = "0";
-            } else if(rdn_host_internet.isSelected()) {
-                sv_host = "1";
-            }
-            
-            if(rdn_game_defence.isSelected()) {
-                sv_game = "df";
-            } else if(rdn_game_coop.isSelected()) {
-                sv_game = "coop";
-            }
-            
-            String sv_exebin = input_exe_bin.getText();
-            String sv_fsgame = input_fsgame.getText();
-            String sv_parameters = input_parameters.getText();
-
-            if (sv_addon == null) {
-                // Creates and launches a process with these settings
-                ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
-                Process process = processBuilder.start();
-
-                // Locks the program to look forward to the server process
-                int exitCode = process.waitFor();
-
-                // Shows a output depending on what happened after terminating the server
-                if (exitCode == 0) {
-                    getToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
-                } else {
-                    getToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Server process crashed/failed.\n\nOutput code: " + exitCode, "Error", 0);
-                    loadCrashLog();
-                }
-            } else {
-                // Creates and launches a process with these settings
-                ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -mod=" + sv_addon + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
-                Process process = processBuilder.start();
-
-                // Locks the program to look forward to the server process
-                int exitCode = process.waitFor();
-
-                // Shows a output depending on what happened after terminating the server
-                if (exitCode == 0) {
-                    getToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
-                } else {
-                    getToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Server process crashed/failed.\n\nOutput code: " + exitCode, "Error", 0);
-                    loadCrashLog();
-                }
-            }
-           
-            
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-            getToolkit().beep();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", 0);
-            
-        }
-    }//GEN-LAST:event_launch_server
-
-    private void alternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_password
-        // Enables / disables server password 
-        if(alternate_sv_password.isSelected()) {
-            input_sv_password.setEnabled(true);
-        } else {
-            input_sv_password.setEnabled(false);
-            input_sv_password.setText("");
-        }
-    }//GEN-LAST:event_alternate_password
-
-    private void clear_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_parameters
-        // Clears and put default values
-        input_sv_name.setText("xrmpe_server");
-        combo_sv_map.setSelectedIndex(0);
-        combo_sv_maxplayers.setSelectedIndex(3);
-        input_sv_password.setText("");
-        input_sv_password.setEnabled(false);
-        alternate_sv_password.setSelected(false);
-        rdn_host_lan.setSelected(true);
-        rdn_game_defence.setSelected(true);
-        input_exe_bin.setText("dedicated\\xrEngine.exe");
-        input_fsgame.setText("..\\fsgame_s.ltx");
-        input_parameters.setText("-auto_affinity -no_prefetch");
-        status_addon.setText("No addons loaded...");
-        status_addon.setForeground(new java.awt.Color(153,153,153));
-        sv_addon = null;
-    }//GEN-LAST:event_clear_parameters
-
-    private void show_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_about
-        // Shows about window
-        ui_about.setSize(458, 280);
-        ui_about.setLocationRelativeTo(null);
-        ui_about.setIconImage(new ImageIcon(getClass().getResource("icon_about.png")).getImage());
-        ui_about.setVisible(true);
-    }//GEN-LAST:event_show_about
 
     private void btn_add_aplicar1confirmar_adicion_articulo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_aplicar1confirmar_adicion_articulo
         // Opens browser with GitHub URL
@@ -680,6 +618,51 @@ public class ui_manager extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btn_add_aplicar1confirmar_adicion_articulo
+
+    private void unload_addon(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unload_addon
+        sv_addon = "";
+        status_addon.setText("No addons loaded...");
+        status_addon.setForeground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_unload_addon
+
+    private void load_addon(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_addon
+        // Select the path where the profile is stored
+        JFileChooser load_addon_choose = new JFileChooser();
+        load_addon_choose.setCurrentDirectory(new java.io.File("..\\addons"));
+        load_addon_choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        load_addon_choose.showOpenDialog(null);
+        File addon_load_path = load_addon_choose.getSelectedFile();
+
+        sv_addon = addon_load_path.getName();
+        status_addon.setText("Addon loaded: " + sv_addon);
+        status_addon.setForeground(new java.awt.Color(255, 0, 0));
+        btn_unload_addon.setEnabled(true);
+    }//GEN-LAST:event_load_addon
+
+    private void alternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_password
+        // Enables / disables server password
+        if(alternate_sv_password.isSelected()) {
+            input_sv_password.setEnabled(true);
+        } else {
+            input_sv_password.setEnabled(false);
+            input_sv_password.setText("");
+        }
+    }//GEN-LAST:event_alternate_password
+
+    private void block_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_enter
+        // Prevents the user from pressing Enter
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_block_enter
+
+    private void show_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_about
+        // Shows about window
+        ui_about.setSize(458, 280);
+        ui_about.setLocationRelativeTo(null);
+        ui_about.setIconImage(new ImageIcon(getClass().getResource("icon_about.png")).getImage());
+        ui_about.setVisible(true);
+    }//GEN-LAST:event_show_about
 
     private void load_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_profile
         // Select the path where the profile is stored
@@ -695,7 +678,7 @@ public class ui_manager extends javax.swing.JFrame {
         // Starts reading the profile file and writes all the settings
         try {
             BufferedReader br = new BufferedReader(new FileReader(profile_data_root));
-            
+
             String linea;
             ArrayList<String> profile_data = new ArrayList<String>();
             while ((linea = br.readLine()) != null) {
@@ -753,7 +736,7 @@ public class ui_manager extends javax.swing.JFrame {
         save_profile_choose.setCurrentDirectory(new java.io.File("."));
         save_profile_choose.showSaveDialog(null);
         File file_save_profile_path = save_profile_choose.getSelectedFile();
-        
+
         String save_profile_data_root = file_save_profile_path.getAbsolutePath();
 
         // Starts retrieving all the values and store them inside the profile file
@@ -802,47 +785,51 @@ public class ui_manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_save_profile
 
-    private void block_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_enter
-        // Prevents the user from pressing Enter
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_block_enter
-
-    private void block_space(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_space
-        // Prevents the user from pressing Space
-        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_block_space
+    private void clear_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_parameters
+        // Clears and put default values
+        input_sv_name.setText("xrmpe_server");
+        combo_sv_map.setSelectedIndex(0);
+        combo_sv_maxplayers.setSelectedIndex(3);
+        input_sv_password.setText("");
+        input_sv_password.setEnabled(false);
+        alternate_sv_password.setSelected(false);
+        rdn_host_lan.setSelected(true);
+        rdn_game_defence.setSelected(true);
+        input_exe_bin.setText("dedicated\\xrEngine.exe");
+        input_fsgame.setText("..\\fsgame_s.ltx");
+        input_parameters.setText("-auto_affinity -no_prefetch");
+        status_addon.setText("No addons loaded...");
+        status_addon.setForeground(new java.awt.Color(153,153,153));
+        sv_addon = null;
+    }//GEN-LAST:event_clear_parameters
 
     private void generate_run(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_run
         // Declare vars and stores all the values from the selected settings
         try {
             String sv_name = input_sv_name.getText();
             String sv_password = input_sv_password.getText();
-            
+
             String sv_map = (String)combo_sv_map.getSelectedItem();
             String sv_maxplayers = (String)combo_sv_maxplayers.getSelectedItem();
             String sv_host = "0";
             String sv_game = "df";
-            
+
             if(rdn_host_lan.isSelected()) {
                 sv_host = "0";
             } else if(rdn_host_internet.isSelected()) {
                 sv_host = "1";
             }
-            
+
             if(rdn_game_defence.isSelected()) {
                 sv_game = "df";
             } else if(rdn_game_coop.isSelected()) {
                 sv_game = "coop";
             }
-            
+
             String sv_exebin = input_exe_bin.getText();
             String sv_fsgame = input_fsgame.getText();
             String sv_parameters = input_parameters.getText();
-            
+
             if(sv_addon == null) {
                 // Creates a .bat file and writes the full launch arguments with the retrieved values
                 FileWriter profile_file = new FileWriter("startdedicated_" + sv_game + "_map_" + sv_map + ".bat");
@@ -856,26 +843,91 @@ public class ui_manager extends javax.swing.JFrame {
                 bw.write(sv_exebin + " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -mod=" + sv_addon + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
                 bw.close();
             }
-            
+
             JOptionPane.showMessageDialog(null, "Run file generated successfully. Check your folder.");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Something went wrong when generating the dedicated server run file, please try again...", "Error", 0);
         }
     }//GEN-LAST:event_generate_run
 
-    private void load_addon(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_addon
-        // Select the path where the profile is stored
-        JFileChooser load_addon_choose = new JFileChooser();
-        load_addon_choose.setCurrentDirectory(new java.io.File("..\\addons"));
-        load_addon_choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        load_addon_choose.showOpenDialog(null);
-        File addon_load_path = load_addon_choose.getSelectedFile();
+    private void block_space(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_block_space
+        // Prevents the user from pressing Space
+        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_block_space
 
-        sv_addon = addon_load_path.getName();
-        System.out.println(sv_addon);
-        status_addon.setText("Addon loaded!");
-        status_addon.setForeground(new java.awt.Color(255, 0, 0));
-    }//GEN-LAST:event_load_addon
+    private void launch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_server
+        // Launchs the server with the selected settings
+        try {
+            // Declares vars and stores data from selected options
+            String sv_name = input_sv_name.getText();
+            String sv_password = input_sv_password.getText();
+
+            String sv_map = (String)combo_sv_map.getSelectedItem();
+            String sv_maxplayers = (String)combo_sv_maxplayers.getSelectedItem();
+            String sv_host = "0";
+            String sv_game = "df";
+
+            if(rdn_host_lan.isSelected()) {
+                sv_host = "0";
+            } else if(rdn_host_internet.isSelected()) {
+                sv_host = "1";
+            }
+
+            if(rdn_game_defence.isSelected()) {
+                sv_game = "df";
+            } else if(rdn_game_coop.isSelected()) {
+                sv_game = "coop";
+            }
+
+            String sv_exebin = input_exe_bin.getText();
+            String sv_fsgame = input_fsgame.getText();
+            String sv_parameters = input_parameters.getText();
+
+            if (sv_addon == null) {
+                // Creates and launches a process with these settings
+                ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
+                Process process = processBuilder.start();
+
+                // Locks the program to look forward to the server process
+                int exitCode = process.waitFor();
+
+                // Shows a output depending on what happened after terminating the server
+                if (exitCode == 0) {
+                    getToolkit().beep();
+                    JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
+                } else {
+                    getToolkit().beep();
+                    JOptionPane.showMessageDialog(null, "Server process crashed/failed.\n\nOutput code: " + exitCode, "Error", 0);
+                    loadCrashLog();
+                }
+            } else {
+                // Creates and launches a process with these settings
+                ProcessBuilder processBuilder = new ProcessBuilder(sv_exebin, " -i -fsltx " + sv_fsgame + " " + sv_parameters + " -mod=" + sv_addon + " -start server(" + sv_map + "/" + sv_game + "/hname=" + sv_name + "/maxplayers=" + sv_maxplayers + "/public=" + sv_host + "/psw=" + sv_password + ") client(localhost)");
+                Process process = processBuilder.start();
+
+                // Locks the program to look forward to the server process
+                int exitCode = process.waitFor();
+
+                // Shows a output depending on what happened after terminating the server
+                if (exitCode == 0) {
+                    getToolkit().beep();
+                    JOptionPane.showMessageDialog(null, "Dedicated server has been terminated!", "Alert", 1);
+                } else {
+                    getToolkit().beep();
+                    JOptionPane.showMessageDialog(null, "Server process crashed/failed.\n\nOutput code: " + exitCode, "Error", 0);
+                    loadCrashLog();
+                }
+            }
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", 0);
+
+        }
+    }//GEN-LAST:event_launch_server
 
     public static void main(String args[]) {
         try {
@@ -901,6 +953,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JButton btn_load_addon;
     private javax.swing.JButton btn_load_profile;
     private javax.swing.JButton btn_save_profile;
+    private javax.swing.JButton btn_unload_addon;
     private javax.swing.JComboBox<String> combo_sv_map;
     private javax.swing.JComboBox<String> combo_sv_maxplayers;
     private javax.swing.ButtonGroup filter_gamemode;
@@ -910,6 +963,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JTextArea input_parameters;
     private javax.swing.JTextField input_sv_name;
     private javax.swing.JTextField input_sv_password;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -919,6 +973,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
