@@ -226,7 +226,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="combo_sv_map" min="-2" pref="141" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btn_add_map" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -245,7 +245,7 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="str_gamemode" min="-2" max="-2" attributes="0"/>
                                   <Component id="rdn_game_coop" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="rdn_game_defence" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -302,7 +302,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="input_sv_name" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
+                          <Component id="btn_add_map" max="32767" attributes="0"/>
                           <Component id="combo_sv_map" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -331,7 +331,7 @@
                               <Component id="rdn_host_internet" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="str_gamemode" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="rdn_game_defence" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -655,13 +655,13 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="str_gamemode">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Source/icon_gamemode.png"/>
+                  <Image iconType="3" name="/Source/icon_defence.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gamemode:"/>
                 <Property name="toolTipText" type="java.lang.String" value="Set the gamemode of your dedicated server"/>
@@ -682,6 +682,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activate_defence"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rdn_game_coop">
               <Properties>
@@ -697,6 +700,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activate_coop"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -820,7 +826,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="unload_addon"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btn_add_map">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Source/icon_add.png"/>

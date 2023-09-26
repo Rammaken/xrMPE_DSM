@@ -123,7 +123,7 @@ public class ui_manager extends javax.swing.JFrame {
         str_parameters = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         input_parameters = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
+        str_gamemode = new javax.swing.JLabel();
         rdn_game_defence = new javax.swing.JRadioButton();
         rdn_game_coop = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
@@ -135,7 +135,7 @@ public class ui_manager extends javax.swing.JFrame {
         status_addon = new javax.swing.JLabel();
         btn_load_addon = new javax.swing.JButton();
         btn_unload_addon = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_add_map = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         toolbar1 = new javax.swing.JToolBar();
         btn_arcanum_save_profile = new javax.swing.JButton();
@@ -399,10 +399,10 @@ public class ui_manager extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(input_parameters);
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_gamemode.png"))); // NOI18N
-        jLabel4.setText("Gamemode:");
-        jLabel4.setToolTipText("Set the gamemode of your dedicated server");
+        str_gamemode.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        str_gamemode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_defence.png"))); // NOI18N
+        str_gamemode.setText("Gamemode:");
+        str_gamemode.setToolTipText("Set the gamemode of your dedicated server");
 
         filter_gamemode.add(rdn_game_defence);
         rdn_game_defence.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -410,12 +410,22 @@ public class ui_manager extends javax.swing.JFrame {
         rdn_game_defence.setText("Defence");
         rdn_game_defence.setToolTipText("df");
         rdn_game_defence.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rdn_game_defence.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activate_defence(evt);
+            }
+        });
 
         filter_gamemode.add(rdn_game_coop);
         rdn_game_coop.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         rdn_game_coop.setText("Coop");
         rdn_game_coop.setToolTipText("coop");
         rdn_game_coop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rdn_game_coop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activate_coop(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_map.png"))); // NOI18N
@@ -471,7 +481,7 @@ public class ui_manager extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_add.png"))); // NOI18N
+        btn_add_map.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_add.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
@@ -498,7 +508,7 @@ public class ui_manager extends javax.swing.JFrame {
                                     .addGroup(pnl_mainLayout.createSequentialGroup()
                                         .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton1))
+                                        .addComponent(btn_add_map))
                                     .addComponent(jLabel5)))
                             .addGroup(pnl_mainLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -509,7 +519,7 @@ public class ui_manager extends javax.swing.JFrame {
                                     .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
+                            .addComponent(str_gamemode)
                             .addComponent(rdn_game_coop)
                             .addComponent(rdn_game_defence))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -552,7 +562,7 @@ public class ui_manager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_add_map, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -575,7 +585,7 @@ public class ui_manager extends javax.swing.JFrame {
                         .addGap(8, 8, 8)
                         .addComponent(rdn_host_internet))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(str_gamemode)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rdn_game_defence)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1327,6 +1337,14 @@ public class ui_manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_launch_arcanum_server
 
+    private void activate_defence(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activate_defence
+        str_gamemode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_defence.png")));
+    }//GEN-LAST:event_activate_defence
+
+    private void activate_coop(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activate_coop
+        str_gamemode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_coop.png")));
+    }//GEN-LAST:event_activate_coop
+
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel( new FlatLightLaf() );
@@ -1346,6 +1364,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JCheckBox alternate_sv_password;
     private javax.swing.JButton btn_about;
     private javax.swing.JButton btn_add_aplicar1;
+    private javax.swing.JButton btn_add_map;
     private javax.swing.JButton btn_arcanum_clear;
     private javax.swing.JButton btn_arcanum_launch;
     private javax.swing.JButton btn_arcanum_load_profile;
@@ -1375,7 +1394,6 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JTextField input_sv_name;
     private javax.swing.JTextField input_sv_password;
     private javax.swing.JLabel intro_arcanum_chapters;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1385,7 +1403,6 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1411,6 +1428,7 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JLabel str_exe_bin1;
     private javax.swing.JLabel str_fsgame;
     private javax.swing.JLabel str_fsgame1;
+    private javax.swing.JLabel str_gamemode;
     private javax.swing.JLabel str_parameters;
     private javax.swing.JLabel str_parameters1;
     private javax.swing.JTabbedPane tabs;
