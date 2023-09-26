@@ -482,6 +482,11 @@ public class ui_manager extends javax.swing.JFrame {
         });
 
         btn_add_map.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_add.png"))); // NOI18N
+        btn_add_map.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_new_map(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_mainLayout = new javax.swing.GroupLayout(pnl_main);
         pnl_main.setLayout(pnl_mainLayout);
@@ -1344,6 +1349,34 @@ public class ui_manager extends javax.swing.JFrame {
     private void activate_coop(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activate_coop
         str_gamemode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_coop.png")));
     }//GEN-LAST:event_activate_coop
+
+    private void add_new_map(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_new_map
+        String var_newmap_name = JOptionPane.showInputDialog(null, "Insert map name", "Adding new map", 1);
+        String var_maplist_path = ".\\maps_list.txt";
+
+        if(var_newmap_name == null) {
+            
+        } else {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(var_maplist_path));
+                StringBuilder content = new StringBuilder();
+                String linea;
+                while ((linea = reader.readLine()) != null) {
+                    content.append(linea).append("\n");
+                }
+                reader.close();
+
+                BufferedWriter writer = new BufferedWriter(new FileWriter(var_maplist_path));
+                writer.write(content.toString());
+                writer.write(var_newmap_name);
+                writer.close();
+                combo_sv_map.removeAllItems();
+                loadMaps();
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Error at writting in file!\nCheck for \"maps_list.txt\" file existence and then try again...\n\nLog:\n" + e.getMessage(), "Error", 0);
+            }
+        }
+    }//GEN-LAST:event_add_new_map
 
     public static void main(String args[]) {
         try {

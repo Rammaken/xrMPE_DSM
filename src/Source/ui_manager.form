@@ -832,6 +832,9 @@
                   <Image iconType="3" name="/Source/icon_add.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_new_map"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
