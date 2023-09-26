@@ -99,6 +99,7 @@ public class ui_manager extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btn_add_aplicar1 = new javax.swing.JButton();
+        filter_host_arcanum = new javax.swing.ButtonGroup();
         tabs = new javax.swing.JTabbedPane();
         pnl_main = new javax.swing.JPanel();
         btn_launch = new javax.swing.JButton();
@@ -107,8 +108,8 @@ public class ui_manager extends javax.swing.JFrame {
         btn_generate = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         toolbar = new javax.swing.JToolBar();
-        btn_save_profile = new javax.swing.JButton();
-        btn_load_profile = new javax.swing.JButton();
+        btn_main_save_profile = new javax.swing.JButton();
+        btn_main_load_profile = new javax.swing.JButton();
         btn_about = new javax.swing.JButton();
         input_sv_password = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -136,6 +137,32 @@ public class ui_manager extends javax.swing.JFrame {
         btn_unload_addon = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        toolbar1 = new javax.swing.JToolBar();
+        btn_arcanum_save_profile = new javax.swing.JButton();
+        btn_arcanum_load_profile = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        input_arcanum_sv_name = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        input_arcanum_sv_password = new javax.swing.JTextField();
+        alternate_arcanum_sv_password = new javax.swing.JCheckBox();
+        combo_arcanum_sv_maxplayers = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        rdn_arcanum_host_lan = new javax.swing.JRadioButton();
+        rdn_arcanum_internet = new javax.swing.JRadioButton();
+        str_exe_bin1 = new javax.swing.JLabel();
+        input_arcanum_bin = new javax.swing.JTextField();
+        str_fsgame1 = new javax.swing.JLabel();
+        input_arcanum_fsgame = new javax.swing.JTextField();
+        str_parameters1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        input_arcanum_parameters = new javax.swing.JTextArea();
+        combo_arcanum_sv_map = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        btn_arcanum_launch = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        intro_arcanum_chapters = new javax.swing.JLabel();
 
         ui_about.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ui_about.setTitle("About");
@@ -268,33 +295,33 @@ public class ui_manager extends javax.swing.JFrame {
         toolbar.setBackground(new java.awt.Color(255, 255, 255));
         toolbar.setRollover(true);
 
-        btn_save_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_save_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_save_profile.png"))); // NOI18N
-        btn_save_profile.setText("Save profile");
-        btn_save_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_save_profile.setFocusable(false);
-        btn_save_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btn_save_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_save_profile.addActionListener(new java.awt.event.ActionListener() {
+        btn_main_save_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_main_save_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_save_profile.png"))); // NOI18N
+        btn_main_save_profile.setText("Save profile");
+        btn_main_save_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_main_save_profile.setFocusable(false);
+        btn_main_save_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_main_save_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_main_save_profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save_profile(evt);
             }
         });
-        toolbar.add(btn_save_profile);
+        toolbar.add(btn_main_save_profile);
 
-        btn_load_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_load_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_load_profile.png"))); // NOI18N
-        btn_load_profile.setText("Load profile");
-        btn_load_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_load_profile.setFocusable(false);
-        btn_load_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btn_load_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_load_profile.addActionListener(new java.awt.event.ActionListener() {
+        btn_main_load_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_main_load_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_load_profile.png"))); // NOI18N
+        btn_main_load_profile.setText("Load profile");
+        btn_main_load_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_main_load_profile.setFocusable(false);
+        btn_main_load_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_main_load_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_main_load_profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 load_profile(evt);
             }
         });
-        toolbar.add(btn_load_profile);
+        toolbar.add(btn_main_load_profile);
 
         btn_about.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_about.png"))); // NOI18N
@@ -360,7 +387,7 @@ public class ui_manager extends javax.swing.JFrame {
         input_parameters.setForeground(new java.awt.Color(51, 51, 51));
         input_parameters.setLineWrap(true);
         input_parameters.setRows(5);
-        input_parameters.setText("-auto_affinity -no_prefetch");
+        input_parameters.setText("-noprefetch -auto_affinity");
         input_parameters.setToolTipText("(ADVANCED) Set extra parameters for server launch");
         input_parameters.setWrapStyleWord(true);
         input_parameters.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -462,17 +489,22 @@ public class ui_manager extends javax.swing.JFrame {
                             .addComponent(input_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)
                             .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
                             .addGroup(pnl_mainLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel7))
-                            .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                                        .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton1))
+                                    .addComponent(jLabel5)))
                             .addGroup(pnl_mainLayout.createSequentialGroup()
-                                .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnl_mainLayout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jLabel7))
+                                    .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -513,7 +545,7 @@ public class ui_manager extends javax.swing.JFrame {
             pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_mainLayout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel5))
@@ -521,9 +553,9 @@ public class ui_manager extends javax.swing.JFrame {
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(input_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(combo_sv_map))
-                .addGap(11, 11, 11)
-                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(combo_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -533,8 +565,8 @@ public class ui_manager extends javax.swing.JFrame {
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
+                        .addComponent(combo_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnl_mainLayout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -574,23 +606,276 @@ public class ui_manager extends javax.swing.JFrame {
                 .addGroup(pnl_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         tabs.addTab("Main", new javax.swing.ImageIcon(getClass().getResource("/Source/icon_tab_xrmpe.png")), pnl_main); // NOI18N
+
+        toolbar1.setBackground(new java.awt.Color(255, 255, 255));
+        toolbar1.setRollover(true);
+
+        btn_arcanum_save_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_arcanum_save_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_save_profile.png"))); // NOI18N
+        btn_arcanum_save_profile.setText("Save profile");
+        btn_arcanum_save_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_arcanum_save_profile.setFocusable(false);
+        btn_arcanum_save_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_arcanum_save_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_arcanum_save_profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_arcanum_save_profilesave_profile(evt);
+            }
+        });
+        toolbar1.add(btn_arcanum_save_profile);
+
+        btn_arcanum_load_profile.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_arcanum_load_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_load_profile.png"))); // NOI18N
+        btn_arcanum_load_profile.setText("Load profile");
+        btn_arcanum_load_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_arcanum_load_profile.setFocusable(false);
+        btn_arcanum_load_profile.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btn_arcanum_load_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_arcanum_load_profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_arcanum_load_profileload_profile(evt);
+            }
+        });
+        toolbar1.add(btn_arcanum_load_profile);
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_name.png"))); // NOI18N
+        jLabel10.setText("Server name:");
+
+        input_arcanum_sv_name.setText("shadow_of_coop_server");
+        input_arcanum_sv_name.setToolTipText("Set the name of your dedicated server");
+        input_arcanum_sv_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_arcanum_sv_nameblock_space(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_password.png"))); // NOI18N
+        jLabel11.setText("Server password:");
+
+        input_arcanum_sv_password.setToolTipText("Set a password for your dedicated server");
+        input_arcanum_sv_password.setEnabled(false);
+
+        alternate_arcanum_sv_password.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        alternate_arcanum_sv_password.setText("Enable");
+        alternate_arcanum_sv_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        alternate_arcanum_sv_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alternate_arcanum_sv_passwordalternate_password(evt);
+            }
+        });
+
+        combo_arcanum_sv_maxplayers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        combo_arcanum_sv_maxplayers.setSelectedIndex(3);
+        combo_arcanum_sv_maxplayers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_players.png"))); // NOI18N
+        jLabel12.setText("Players:");
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_host.png"))); // NOI18N
+        jLabel13.setText("Host type:");
+        jLabel13.setToolTipText("Set the host type of your dedicated server");
+
+        filter_host_arcanum.add(rdn_arcanum_host_lan);
+        rdn_arcanum_host_lan.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        rdn_arcanum_host_lan.setSelected(true);
+        rdn_arcanum_host_lan.setText("LAN");
+        rdn_arcanum_host_lan.setToolTipText("public=0");
+        rdn_arcanum_host_lan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        filter_host_arcanum.add(rdn_arcanum_internet);
+        rdn_arcanum_internet.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        rdn_arcanum_internet.setText("Internet");
+        rdn_arcanum_internet.setToolTipText("public=1");
+        rdn_arcanum_internet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        str_exe_bin1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        str_exe_bin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_exebin.png"))); // NOI18N
+        str_exe_bin1.setText("Executable bin:");
+
+        input_arcanum_bin.setForeground(new java.awt.Color(51, 51, 51));
+        input_arcanum_bin.setText("dedicated\\xrEngine.exe");
+        input_arcanum_bin.setToolTipText("(ADVANCED) Set the file dir of your dedicated xrEngine.exe");
+
+        str_fsgame1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        str_fsgame1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_fsgame.png"))); // NOI18N
+        str_fsgame1.setText("fsgame file:");
+
+        input_arcanum_fsgame.setForeground(new java.awt.Color(51, 51, 51));
+        input_arcanum_fsgame.setText("..\\fsgame_s.ltx");
+        input_arcanum_fsgame.setToolTipText("(ADVANCED) Set the file dir of your fsgame.ltx");
+
+        str_parameters1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        str_parameters1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_parameters.png"))); // NOI18N
+        str_parameters1.setText("Start parameters:");
+
+        input_arcanum_parameters.setColumns(20);
+        input_arcanum_parameters.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        input_arcanum_parameters.setForeground(new java.awt.Color(51, 51, 51));
+        input_arcanum_parameters.setLineWrap(true);
+        input_arcanum_parameters.setRows(5);
+        input_arcanum_parameters.setText("-noprefetch");
+        input_arcanum_parameters.setToolTipText("(ADVANCED) Set extra parameters for server launch");
+        input_arcanum_parameters.setWrapStyleWord(true);
+        input_arcanum_parameters.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                input_arcanum_parametersblock_enter(evt);
+            }
+        });
+        jScrollPane3.setViewportView(input_arcanum_parameters);
+
+        combo_arcanum_sv_map.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chapter 1: Cordon", "Chapter 2: Garbage", "Chapter 3: Agroprom", "Chapter 4: Agroprom Underground", "Chapter 5: Agroprom -After underground-", "Chapter 6: Bar", "Chapter 7: Dark Valley", "Chapter 8: Wild Territory", "Chapter 9: Yantar" }));
+        combo_arcanum_sv_map.setToolTipText("Select the map for your dedicated server");
+        combo_arcanum_sv_map.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        combo_arcanum_sv_map.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                load_intro(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_chapters.png"))); // NOI18N
+        jLabel14.setText("Chapters");
+
+        btn_arcanum_launch.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_arcanum_launch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/icon_launch.png"))); // NOI18N
+        btn_arcanum_launch.setText("Launch server");
+        btn_arcanum_launch.setToolTipText("Launch a dedicated server with all this settings");
+        btn_arcanum_launch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_arcanum_launch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_arcanum_launchlaunch_server(evt);
+            }
+        });
+
+        intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addComponent(toolbar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(alternate_arcanum_sv_password))
+                                    .addComponent(input_arcanum_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(106, 106, 106))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(input_arcanum_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jLabel12))
+                                    .addComponent(combo_arcanum_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel13)
+                            .addComponent(rdn_arcanum_internet)
+                            .addComponent(rdn_arcanum_host_lan)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(342, 342, 342)
+                            .addComponent(jLabel15))
+                        .addComponent(str_exe_bin1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(str_parameters1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(str_fsgame1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(input_arcanum_fsgame, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(input_arcanum_bin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(intro_arcanum_chapters)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(combo_arcanum_sv_map, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel14)
+                                    .addGap(197, 197, 197))))))
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addComponent(jSeparator4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_arcanum_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(toolbar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_arcanum_host_lan)
+                        .addGap(8, 8, 8)
+                        .addComponent(rdn_arcanum_internet))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(31, 31, 31))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(input_arcanum_sv_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(combo_arcanum_sv_maxplayers, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(alternate_arcanum_sv_password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_arcanum_sv_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(intro_arcanum_chapters)
+                        .addGap(18, 18, 18)
+                        .addComponent(str_exe_bin1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_arcanum_bin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(str_fsgame1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_arcanum_fsgame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(str_parameters1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_arcanum_launch, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(combo_arcanum_sv_map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        tabs.addTab("Shadow of COOP", jPanel1);
+        tabs.addTab("Shadow of COOP", new javax.swing.ImageIcon(getClass().getResource("/Source/icon_tab_arcanum.png")), jPanel1); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -602,9 +887,7 @@ public class ui_manager extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+            .addComponent(tabs)
         );
 
         pack();
@@ -623,6 +906,8 @@ public class ui_manager extends javax.swing.JFrame {
         sv_addon = "";
         status_addon.setText("No addons loaded...");
         status_addon.setForeground(new java.awt.Color(153, 153, 153));
+        btn_load_addon.setEnabled(true);
+        btn_unload_addon.setEnabled(false);
     }//GEN-LAST:event_unload_addon
 
     private void load_addon(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_addon
@@ -637,6 +922,7 @@ public class ui_manager extends javax.swing.JFrame {
         status_addon.setText("Addon loaded: " + sv_addon);
         status_addon.setForeground(new java.awt.Color(255, 0, 0));
         btn_unload_addon.setEnabled(true);
+        btn_load_addon.setEnabled(false);
     }//GEN-LAST:event_load_addon
 
     private void alternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_password
@@ -929,6 +1215,53 @@ public class ui_manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_launch_server
 
+    private void btn_arcanum_save_profilesave_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_save_profilesave_profile
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_arcanum_save_profilesave_profile
+
+    private void btn_arcanum_load_profileload_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_load_profileload_profile
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_arcanum_load_profileload_profile
+
+    private void input_arcanum_sv_nameblock_space(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_arcanum_sv_nameblock_space
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_arcanum_sv_nameblock_space
+
+    private void alternate_arcanum_sv_passwordalternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_arcanum_sv_passwordalternate_password
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alternate_arcanum_sv_passwordalternate_password
+
+    private void input_arcanum_parametersblock_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_arcanum_parametersblock_enter
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_arcanum_parametersblock_enter
+
+    private void btn_arcanum_launchlaunch_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_launchlaunch_server
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_arcanum_launchlaunch_server
+
+    private void load_intro(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_intro
+            String temp_chapter_selected = (String)combo_arcanum_sv_map.getSelectedItem();
+            if(temp_chapter_selected.equals("Chapter 1: Cordon")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter1.png")));
+            } else if(temp_chapter_selected.equals("Chapter 2: Garbage")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter2.png")));
+            } else if(temp_chapter_selected.equals("Chapter 3: Agroprom")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter3.png")));
+            } else if(temp_chapter_selected.equals("Chapter 4: Agroprom Underground")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter4.png")));
+            } else if(temp_chapter_selected.equals("Chapter 5: Agroprom -After underground-")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter5.png")));
+            } else if(temp_chapter_selected.equals("Chapter 6: Bar")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter6.png")));
+            } else if(temp_chapter_selected.equals("Chapter 7: Dark Valley")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter7.png")));
+            } else if(temp_chapter_selected.equals("Chapter 8: Wild Territory")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter8.png")));
+            } else if(temp_chapter_selected.equals("Chapter 9: Yantar")) {
+                intro_arcanum_chapters.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Source/intro_chapter9.png")));
+            }
+    }//GEN-LAST:event_load_intro
+
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel( new FlatLightLaf() );
@@ -944,27 +1277,46 @@ public class ui_manager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox alternate_arcanum_sv_password;
     private javax.swing.JCheckBox alternate_sv_password;
     private javax.swing.JButton btn_about;
     private javax.swing.JButton btn_add_aplicar1;
+    private javax.swing.JButton btn_arcanum_launch;
+    private javax.swing.JButton btn_arcanum_load_profile;
+    private javax.swing.JButton btn_arcanum_save_profile;
     private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_generate;
     private javax.swing.JButton btn_launch;
     private javax.swing.JButton btn_load_addon;
-    private javax.swing.JButton btn_load_profile;
-    private javax.swing.JButton btn_save_profile;
+    private javax.swing.JButton btn_main_load_profile;
+    private javax.swing.JButton btn_main_save_profile;
     private javax.swing.JButton btn_unload_addon;
+    private javax.swing.JComboBox<String> combo_arcanum_sv_map;
+    private javax.swing.JComboBox<String> combo_arcanum_sv_maxplayers;
     private javax.swing.JComboBox<String> combo_sv_map;
     private javax.swing.JComboBox<String> combo_sv_maxplayers;
     private javax.swing.ButtonGroup filter_gamemode;
     private javax.swing.ButtonGroup filter_host;
+    private javax.swing.ButtonGroup filter_host_arcanum;
+    private javax.swing.JTextField input_arcanum_bin;
+    private javax.swing.JTextField input_arcanum_fsgame;
+    private javax.swing.JTextArea input_arcanum_parameters;
+    private javax.swing.JTextField input_arcanum_sv_name;
+    private javax.swing.JTextField input_arcanum_sv_password;
     private javax.swing.JTextField input_exe_bin;
     private javax.swing.JTextField input_fsgame;
     private javax.swing.JTextArea input_parameters;
     private javax.swing.JTextField input_sv_name;
     private javax.swing.JTextField input_sv_password;
+    private javax.swing.JLabel intro_arcanum_chapters;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -976,20 +1328,28 @@ public class ui_manager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel pnl_main;
+    private javax.swing.JRadioButton rdn_arcanum_host_lan;
+    private javax.swing.JRadioButton rdn_arcanum_internet;
     private javax.swing.JRadioButton rdn_game_coop;
     private javax.swing.JRadioButton rdn_game_defence;
     private javax.swing.JRadioButton rdn_host_internet;
     private javax.swing.JRadioButton rdn_host_lan;
     private javax.swing.JLabel status_addon;
     private javax.swing.JLabel str_exe_bin;
+    private javax.swing.JLabel str_exe_bin1;
     private javax.swing.JLabel str_fsgame;
+    private javax.swing.JLabel str_fsgame1;
     private javax.swing.JLabel str_parameters;
+    private javax.swing.JLabel str_parameters1;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JToolBar toolbar;
+    private javax.swing.JToolBar toolbar1;
     private javax.swing.JDialog ui_about;
     // End of variables declaration//GEN-END:variables
 }
