@@ -48,7 +48,7 @@ public class ui_manager extends javax.swing.JFrame {
         } catch (IOException e) {
             e.printStackTrace();
             getToolkit().beep();
-            JOptionPane.showMessageDialog(null, "Error at loading maps!\n, check if 'maps_list.txt' file exists in the installed folder and then restart this program.\n\nLog: " + e.getMessage(), "Error", 0);
+            JOptionPane.showMessageDialog(null, "Error at loading maps!\nCheck the existence of a file called \"maps_list.txt\" within the folder where this program is installed, then restart the application.\n\nLog:\n" + e.getMessage(), "Error", 0);
             combo_sv_map.addItem("MAPS NOT FOUND!");
         }
     }
@@ -81,7 +81,7 @@ public class ui_manager extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, crash_data.get(0) + "\n" + crash_data.get(1) + "\n" + crash_data.get(2) + "\n" + crash_data.get(3) +"\n" + crash_data.get(4) +"\n" + crash_data.get(5) +"\n" + crash_data.get(6) +"\n" + crash_data.get(7) +"\n" + crash_data.get(8) +"\n" + crash_data.get(9) +"\n" + crash_data.get(10), "Crash log", 0);
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Failed at trying to automtically retrieve crash log. \nCheck '_appdata_server' folder for full information.");
+            JOptionPane.showMessageDialog(null, "Failed at trying to automatically retrieve crash log.\nCheck \"_appdata_server\" folder for full information.");
         }
     }
 
