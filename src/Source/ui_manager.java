@@ -665,7 +665,7 @@ public class ui_manager extends javax.swing.JFrame {
         btn_arcanum_clear.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btn_arcanum_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_arcanum_clearclear_parameters(evt);
+                clear_arcanum(evt);
             }
         });
         toolbar1.add(btn_arcanum_clear);
@@ -1111,10 +1111,7 @@ public class ui_manager extends javax.swing.JFrame {
         rdn_game_defence.setSelected(true);
         input_exe_bin.setText("dedicated\\xrEngine.exe");
         input_fsgame.setText("..\\fsgame_s.ltx");
-        input_parameters.setText("-auto_affinity -no_prefetch");
-        status_addon.setText("No addons loaded...");
-        status_addon.setForeground(new java.awt.Color(153,153,153));
-        sv_addon = null;
+        input_parameters.setText("-noprefetch -auto_affinity");
     }//GEN-LAST:event_clear_parameters
 
     private void generate_run(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_run
@@ -1286,10 +1283,6 @@ public class ui_manager extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_load_intro
 
-    private void btn_arcanum_clearclear_parameters(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_clearclear_parameters
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_arcanum_clearclear_parameters
-
     private void launch_arcanum_server(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_launch_arcanum_server
         // Launchs the server with the selected settings
         try {
@@ -1377,6 +1370,20 @@ public class ui_manager extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_add_new_map
+
+    private void clear_arcanum(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_arcanum
+        // Clears and put default values
+        input_arcanum_sv_name.setText("shadow_of_coop_server");
+        combo_arcanum_sv_map.setSelectedIndex(0);
+        combo_arcanum_sv_maxplayers.setSelectedIndex(3);
+        input_arcanum_sv_password.setText("");
+        input_arcanum_sv_password.setEnabled(false);
+        alternate_arcanum_sv_password.setSelected(false);
+        rdn_arcanum_host_lan.setSelected(true);
+        input_arcanum_exe_bin.setText("dedicated\\xrEngine.exe");
+        input_arcanum_fsgame.setText("..\\fsgame_s.ltx");
+        input_arcanum_parameters.setText("-noprefetch");
+    }//GEN-LAST:event_clear_arcanum
 
     public static void main(String args[]) {
         try {
