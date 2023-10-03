@@ -1027,7 +1027,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_arcanum_save_profilesave_profile"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arcanum_save_profile"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_arcanum_load_profile">
@@ -1047,7 +1047,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_arcanum_load_profileload_profile"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arcanum_load_profile"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_arcanum_clear">
@@ -1121,7 +1121,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alternate_arcanum_sv_passwordalternate_password"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alternate_arcanum_password"/>
               </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="combo_arcanum_sv_maxplayers">

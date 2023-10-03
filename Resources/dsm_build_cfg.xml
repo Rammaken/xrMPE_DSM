@@ -4,11 +4,11 @@
   <headerType>gui</headerType>
   <jar>E:\Workspace\Java\xrMPE_DSM\dist\xrMPE_DSM.jar</jar>
   <outfile>C:\Users\Rammaken\Desktop\dsm.exe</outfile>
-  <errTitle></errTitle>
+  <errTitle>ERROR</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl></downloadUrl>
+  <downloadUrl>https://www.java.com/es/download/ie_manual.jsp</downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
@@ -19,10 +19,10 @@
     <cp>lib/flatlaf-3.2.1.jar</cp>
   </classPath>
   <jre>
-    <path>%JAVA_HOME%;%PATH%</path>
+    <path>C:\Program Files\Java\jdk-20</path>
     <requiresJdk>false</requiresJdk>
     <requires64Bit>false</requires64Bit>
-    <minVersion>18</minVersion>
+    <minVersion>1.8</minVersion>
     <maxVersion></maxVersion>
   </jre>
 </launch4jConfig>

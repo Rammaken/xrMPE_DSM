@@ -636,7 +636,7 @@ public class ui_manager extends javax.swing.JFrame {
         btn_arcanum_save_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btn_arcanum_save_profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_arcanum_save_profilesave_profile(evt);
+                arcanum_save_profile(evt);
             }
         });
         toolbar1.add(btn_arcanum_save_profile);
@@ -650,7 +650,7 @@ public class ui_manager extends javax.swing.JFrame {
         btn_arcanum_load_profile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btn_arcanum_load_profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_arcanum_load_profileload_profile(evt);
+                arcanum_load_profile(evt);
             }
         });
         toolbar1.add(btn_arcanum_load_profile);
@@ -694,7 +694,7 @@ public class ui_manager extends javax.swing.JFrame {
         alternate_arcanum_sv_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         alternate_arcanum_sv_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alternate_arcanum_sv_passwordalternate_password(evt);
+                alternate_arcanum_password(evt);
             }
         });
 
@@ -1240,21 +1240,156 @@ public class ui_manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_launch_server
 
-    private void btn_arcanum_save_profilesave_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_save_profilesave_profile
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_arcanum_save_profilesave_profile
+    private void arcanum_save_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcanum_save_profile
+        // Selects where to save the new profile
+        JFileChooser save_arcanum_profile_choose = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Server profiles (.dat)", "dat");
+        save_arcanum_profile_choose.setFileFilter(filter);
+        save_arcanum_profile_choose.setCurrentDirectory(new java.io.File("."));
+        save_arcanum_profile_choose.showSaveDialog(null);
+        File file_arcanum_save_profile_path = save_arcanum_profile_choose.getSelectedFile();
 
-    private void btn_arcanum_load_profileload_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arcanum_load_profileload_profile
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_arcanum_load_profileload_profile
+        String save_arcanum_profile_data_root = file_arcanum_save_profile_path.getAbsolutePath();
+
+        // Starts retrieving all the values and store them inside the profile file
+        try {
+            ArrayList<String> save_profile_data = new ArrayList<String>();
+
+            save_profile_data.add(input_arcanum_sv_name.getText());
+
+            if (alternate_arcanum_sv_password.isSelected()) {
+                save_profile_data.add("password_enabled");
+                save_profile_data.add(input_arcanum_sv_password.getText());
+            } else {
+                save_profile_data.add("password_disabled");
+                save_profile_data.add("");
+            }
+            
+            String temp_map = String.valueOf(combo_arcanum_sv_map.getSelectedItem());
+            if (temp_map.equals("Chapter 1: Cordon")) {
+                save_profile_data.add("coop_l01_escape");
+            } else if (temp_map.equals("Chapter 2: Garbage")) {
+                save_profile_data.add("coop_l02_garbage");
+            } else if (temp_map.equals("Chapter 3: Agroprom")) {
+                save_profile_data.add("coop_l03_agroprom");
+            } else if (temp_map.equals("Chapter 4: Agroprom Underground")) {
+                save_profile_data.add("coop_l03_agroprom_underground");
+            } else if (temp_map.equals("Chapter 5: Agroprom -After underground-")) {
+                save_profile_data.add("coop_l03_agroprom_1");
+            } else if (temp_map.equals("Chapter 6: Bar")) {
+                save_profile_data.add("coop_l05_bar");
+            } else if (temp_map.equals("Chapter 7: Dark Valley")) {
+                save_profile_data.add("coop_l04_darkvalley");
+            } else if (temp_map.equals("Chapter 8: Wild Territory")) {
+                save_profile_data.add("coop_l06_rostok");
+            } else if (temp_map.equals("Chapter 9: Yantar")) {
+                save_profile_data.add("coop_l08_yantar");
+            }
+
+            save_profile_data.add((String) combo_arcanum_sv_maxplayers.getSelectedItem());
+
+            if (rdn_arcanum_host_lan.isSelected()) {
+                save_profile_data.add("host_lan");
+            } else if (rdn_arcanum_host_internet.isSelected()) {
+                save_profile_data.add("host_internet");
+            }
+
+            save_profile_data.add(input_arcanum_exe_bin.getText());
+            save_profile_data.add(input_arcanum_fsgame.getText());
+            save_profile_data.add(input_arcanum_parameters.getText());
+
+            // Creates the profile and writes in it all the values
+            FileWriter profile_file = new FileWriter(save_arcanum_profile_data_root + ".dat");
+            BufferedWriter bw = new BufferedWriter(profile_file);
+            bw.write(save_profile_data.get(0) + "\n" + save_profile_data.get(1) + "\n" + save_profile_data.get(2) + "\n" + save_profile_data.get(3) + "\n" + save_profile_data.get(4) + "\n" + save_profile_data.get(5) + "\n" + save_profile_data.get(6) + "\n" + save_profile_data.get(7) + "\n" + save_profile_data.get(8));
+            bw.close();
+
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Profile saved successfully!");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Something went wrong when saving the profile, please try again...", "Error", 0);
+        }
+    }//GEN-LAST:event_arcanum_save_profile
+
+    private void arcanum_load_profile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arcanum_load_profile
+        // Select the path where the profile is stored
+        JFileChooser load_arcanum_profile_choose = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Server profiles (.dat)", "dat");
+        load_arcanum_profile_choose.setFileFilter(filter);
+        load_arcanum_profile_choose.setCurrentDirectory(new java.io.File("."));
+        load_arcanum_profile_choose.showOpenDialog(null);
+        File file_arcanum_load_profile_path = load_arcanum_profile_choose.getSelectedFile();
+
+        String profile_data_root = file_arcanum_load_profile_path.getAbsolutePath();
+
+        // Starts reading the profile file and writes all the settings
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(profile_data_root));
+
+            String linea;
+            ArrayList<String> profile_data = new ArrayList<String>();
+            while ((linea = br.readLine()) != null) {
+                profile_data.add(linea);
+            }
+
+            input_arcanum_sv_name.setText(profile_data.get(0));
+
+            if (profile_data.get(1).equals("password_enabled")) {
+                alternate_arcanum_sv_password.setSelected(true);
+                input_arcanum_sv_password.setEnabled(true);
+                input_arcanum_sv_password.setText(profile_data.get(2));
+            } else if (profile_data.get(1).equals("password_disabled")) {
+                alternate_arcanum_sv_password.setSelected(false);
+                input_arcanum_sv_password.setEnabled(false);
+                input_arcanum_sv_password.setText("");
+            }
+
+            String temp_map = String.valueOf(profile_data.get(3));
+            if (temp_map.equals("coop_l01_escape")) {
+                combo_arcanum_sv_map.setSelectedIndex(0);
+            } else if (temp_map.equals("coop_l02_garbage")) {
+                combo_arcanum_sv_map.setSelectedIndex(1);
+            } else if (temp_map.equals("coop_l03_agroprom")) {
+                combo_arcanum_sv_map.setSelectedIndex(2);
+            } else if (temp_map.equals("coop_l03_agroprom_underground")) {
+                combo_arcanum_sv_map.setSelectedIndex(3);
+            } else if (temp_map.equals("coop_l03_agroprom_1")) {
+                combo_arcanum_sv_map.setSelectedIndex(4);
+            } else if (temp_map.equals("coop_l05_bar")) {
+                combo_arcanum_sv_map.setSelectedIndex(5);
+            } else if (temp_map.equals("coop_l04_darkvalley")) {
+                combo_arcanum_sv_map.setSelectedIndex(6);
+            } else if (temp_map.equals("coop_l06_rostok")) {
+                combo_arcanum_sv_map.setSelectedIndex(7);
+            } else if (temp_map.equals("coop_l08_yantar")) {
+                combo_arcanum_sv_map.setSelectedIndex(8);
+            }
+            
+            String temp_players = String.valueOf(profile_data.get(4));
+            combo_arcanum_sv_maxplayers.setSelectedItem(temp_players);
+
+            if (profile_data.get(5).equals("host_lan")) {
+                rdn_arcanum_host_lan.setSelected(true);
+            } else if (profile_data.get(5).equals("host_internet")) {
+                rdn_arcanum_host_internet.setSelected(true);
+            }
+
+            input_arcanum_exe_bin.setText(profile_data.get(6));
+            input_arcanum_fsgame.setText(profile_data.get(7));
+            input_arcanum_parameters.setText(profile_data.get(8));
+
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Profile loaded successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(this, "Something went wrong when loading the profile data, please try again...", "Error", 0);
+        }
+    }//GEN-LAST:event_arcanum_load_profile
 
     private void input_arcanum_sv_nameblock_space(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_arcanum_sv_nameblock_space
         // TODO add your handling code here:
     }//GEN-LAST:event_input_arcanum_sv_nameblock_space
-
-    private void alternate_arcanum_sv_passwordalternate_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_arcanum_sv_passwordalternate_password
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alternate_arcanum_sv_passwordalternate_password
 
     private void input_arcanum_parametersblock_enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_arcanum_parametersblock_enter
         // TODO add your handling code here:
@@ -1384,6 +1519,16 @@ public class ui_manager extends javax.swing.JFrame {
         input_arcanum_fsgame.setText("..\\fsgame_s.ltx");
         input_arcanum_parameters.setText("-noprefetch");
     }//GEN-LAST:event_clear_arcanum
+
+    private void alternate_arcanum_password(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternate_arcanum_password
+        // Enables / disables server password
+        if(alternate_arcanum_sv_password.isSelected()) {
+            input_arcanum_sv_password.setEnabled(true);
+        } else {
+            input_arcanum_sv_password.setEnabled(false);
+            input_arcanum_sv_password.setText("");
+        }
+    }//GEN-LAST:event_alternate_arcanum_password
 
     public static void main(String args[]) {
         try {
