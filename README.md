@@ -8,7 +8,7 @@
 A simple and straight open source GUI app that lets you create, custumize and automatically run for you dedicated servers for xrMPE stalker mod.
 This app was done specially for making dedicated servers creation more easir and noob-friendly, or just as a QoL app with cool features.
 
-![Preview](xrmpe_dsm_preview.png)
+![Previe](https://github.com/Rammaken/xrMPE_DSM/blob/main/xrmpe_dsm_preview.png)
 
 # Features
 - Profiles system
