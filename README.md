@@ -1,7 +1,7 @@
 # Unofficial xrMPE Dedicated Server Manager
 ![Banner](xrmpe_dsm_banner.png)
 - **Author:** Rammaken
-- **Latest version:** 1.4
+- **Latest version:** 1.5
 - **Programming Language:** Java
 
 # Brief
